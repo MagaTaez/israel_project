@@ -1,0 +1,101 @@
+.title1,
+.title2,
+.title3 {
+  font-size: 80px;
+  font-weight: 800;
+  margin: 0;
+  filter: drop-shadow(0 5px 3px #bfccd8);
+}
+.title2 {
+  margin-left: 50px;
+}
+.title3 {
+  margin-left: 100px;
+}
+.text {
+  margin-top: 45px;
+  margin-left: 200px;
+  font-size: 20px;
+  font-weight: 500;
+  max-width: 750px;
+}
+
+.form {
+  display: flex;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1300px) {
+  .form {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title1,
+  .title2,
+  .title3 {
+    font-size: 65px;
+  }
+
+  .title1 {
+    margin: 0;
+    align-self: start;
+  }
+
+  .text {
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-self: end;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title1,
+  .title2,
+  .title3 {
+    font-size: 45px;
+  }
+  .title1 {
+    margin-left: 10%;
+  }
+  .title2 {
+    margin-left: 17%;
+  }
+  .title3 {
+    margin-left: 22%;
+  }
+
+  .text {
+    max-width: 90%;
+    margin-top: 25px;
+  }
+
+  .form {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .title1 {
+    margin-left: 5%;
+  }
+  .title2 {
+    margin-left: 7%;
+  }
+  .title3 {
+    margin-left: 11%;
+  }
+
+  .text {
+    max-width: 100%;
+    margin-top: 25px;
+  }
+}

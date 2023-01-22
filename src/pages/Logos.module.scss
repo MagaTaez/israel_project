@@ -1,0 +1,311 @@
+.wrapper {
+  max-width: 1400px;
+}
+
+.title {
+  margin-top: 30px;
+  font-size: 55px;
+  font-weight: 800;
+  filter: drop-shadow(0 5px 3px #bfccd8);
+}
+
+.service {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+
+  & span {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border: 2px solid black;
+    background-repeat: 20px;
+    border-radius: 20px;
+  }
+}
+
+.dots {
+  &_wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &_long {
+    margin-right: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  &_short {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+  }
+}
+
+.info {
+  display: flex;
+  margin-top: 30px;
+
+  &_left {
+    max-width: 750px;
+
+    & h4 {
+      font-size: 30px;
+      font-weight: 700;
+      max-width: 750px;
+    }
+
+    & p {
+      font-size: 18px;
+      margin-top: 35px;
+    }
+  }
+
+  &_right {
+    margin-left: 40px;
+
+    & div {
+      display: flex;
+      align-items: center;
+
+      & a {
+        font-size: 25px;
+        font-weight: 700;
+        color: #c8d9e9;
+        border-bottom: 3px solid #c8d9e9;
+      }
+      & img {
+        margin-left: 7px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    & p {
+      font-size: 18px;
+      max-width: 280px;
+      margin-top: 8px;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  // max-width: 800px;
+  max-width: 100%;
+  margin-top: 10px;
+}
+.card {
+  margin-top: 30px;
+  // max-width: 340px;
+  max-width: 45%;
+  margin-right: 30px;
+  &_name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &_text {
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4rem;
+    max-width: 340px;
+  }
+}
+
+.article {
+  margin-top: 40px;
+  max-width: 700px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4rem;
+}
+
+.works {
+  padding: 50px 0;
+  &_subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 45px;
+  }
+
+  &_carousel {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  &_topCarousel,
+  &_bottomCarousel {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_card {
+    position: relative;
+    width: 390;
+    height: 330;
+    border-radius: 25px;
+    overflow: hidden;
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &_case {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      padding: 8px 18px;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.list {
+  padding: 0;
+  margin-bottom: 60px;
+
+  &_item {
+    display: list-item;
+    list-style-position: inside;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+
+    & span {
+      font-weight: 700;
+      margin-right: 35px;
+      font-size: 18px;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1300px) {
+  .form {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    margin-top: 0;
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    margin: 0 30px;
+  }
+  .dots_long {
+    display: none;
+  }
+  .info_left {
+    h4 {
+      font-size: 23px;
+    }
+  }
+
+  .info_right {
+    div {
+      a {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .form {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    // margin: 0 20px;
+    // width: 100%;
+
+    // hr {
+    //   margin-right: 50px;
+    // }
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .info {
+    flex-direction: column;
+
+    &_left {
+      h4 {
+        margin-top: 0;
+      }
+
+      p {
+        margin-top: 15px;
+      }
+    }
+
+    &_right {
+      margin: 35px 0 0 0;
+    }
+  }
+
+  .cards {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .card {
+    display: block;
+    max-width: 80%;
+  }
+
+  .article {
+    max-width: 90%;
+  }
+
+  // .form {
+  //   width: 100%;
+  //   margin: 0 auto;
+  // }
+}
+
+@media screen and (max-width: 415px) {
+  .wrapper {
+    margin: 0 10px;
+  }
+
+  .works_subtitle {
+    margin-bottom: 25px;
+  }
+
+  .list_item {
+    span {
+      margin-right: 15px;
+    }
+  }
+}

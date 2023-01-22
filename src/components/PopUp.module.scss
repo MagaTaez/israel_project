@@ -1,0 +1,242 @@
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.overlayVisible {
+  visibility: visible;
+  opacity: 1;
+
+  .drawer {
+    transform: translateY(0);
+  }
+}
+
+.drawer {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  background-color: #c8d9e9;
+  box-shadow: -10px 4px 24px rgba($color: #000000, $alpha: 0.1);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.top {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  &_closeIcon {
+    width: 25px;
+    height: 25px;
+  }
+
+  &_closeIcon:hover {
+    cursor: pointer;
+  }
+
+  &_logo {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+
+    h4 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #000;
+    }
+    & img {
+      margin-top: 5px;
+    }
+  }
+}
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+
+  &_top {
+    display: none;
+    margin-left: 60px;
+  }
+
+  &_top :global(a.active) {
+    border-bottom: 4px solid #c8d9e9;
+    // text-shadow: 1px 2px 5px #c8d9e9;
+    text-shadow: 0 0 30px #c8d9e9, 0 0 40px #c8d9e9, 0 0 55px #c8d9e9, 0 0 75px #c8d9e9,
+      2px 2px 2px rgba(255, 225, 219, 0.503);
+  }
+
+  &_services {
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0 60px 10px 0;
+    color: #000;
+    line-height: 45px;
+  }
+
+  hr {
+    display: none;
+    margin: 0 60px 20px 60px;
+  }
+
+  &_left {
+    margin-left: 60px;
+    font-size: 22px;
+    font-weight: 600;
+
+    & div {
+      margin-top: 7px;
+    }
+  }
+
+  &_center {
+    div {
+      font-weight: 600;
+      font-size: 17px;
+      margin-top: 7px;
+    }
+  }
+
+  &_right {
+    margin-right: 150px;
+    margin-top: 7px;
+  }
+
+  &_project {
+    font-size: 15px;
+  }
+
+  &_mail {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  &_phone {
+    font-size: 20px;
+  }
+
+  &_cooperation {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  &_lastmail {
+    font-size: 20px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 18px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .drawer {
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .middle_right {
+    display: flex;
+    flex-direction: column;
+    // align-self: flex-end;
+
+    margin-right: 8%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .overlay {
+    background-color: transparent;
+
+    opacity: 1;
+
+    // top: 70px;
+    // height: 100vh;
+
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // height: 100%;
+    // background-color: rgba($color: #000000, $alpha: 0.5);
+    // z-index: 1;
+    // visibility: hidden;
+    // opacity: 0;
+    // transition: opacity 0.4s ease-in-out, visibility 0.5s ease-in-out;
+  }
+
+  .overlayVisible {
+    // visibility: hidden;
+    // opacity: 0;
+
+    // .drawer {
+    //   transform: translateY(0);
+    // }
+  }
+
+  .drawer {
+    height: 100vh;
+    top: 0;
+    transform: translateX(-100%);
+    // position: absolute;
+    // width: 100%;
+    // height: 300px;
+    // top: 0;
+    // background-color: #c8d9e9;
+    // box-shadow: -10px 4px 24px rgba($color: #000000, $alpha: 0.1);
+    // transform: translateY(-100%);
+    // transition: transform 0.3s ease-in-out;
+  }
+
+  .top {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    &_logo {
+      margin-left: 0;
+    }
+  }
+
+  .middle {
+    flex-direction: column;
+
+    &_top {
+      display: flex;
+    }
+
+    &_services {
+    }
+
+    hr {
+      display: block;
+    }
+
+    &_right {
+      display: none;
+    }
+
+    &_center {
+      margin: 10px 0 0 60px;
+    }
+  }
+}

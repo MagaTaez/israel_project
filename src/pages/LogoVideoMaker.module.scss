@@ -1,0 +1,343 @@
+.wrapper {
+}
+.topSection {
+  position: relative;
+}
+
+.image {
+  margin-left: -50px;
+  margin-top: -15px;
+  margin-right: -50px;
+  img {
+    width: 100%;
+    max-height: 562px;
+  }
+}
+
+.article {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 21px;
+  left: -15px;
+}
+
+.icons {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  bottom: 71px;
+  left: -15px;
+
+  &_wrapper {
+    position: relative;
+    margin: 0 20px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    padding: 10px;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    // svg {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   fill: #fff;
+    //   width: 70%;
+    //   height: 70%;
+    // }
+  }
+}
+
+.description {
+  margin-top: 15px;
+  position: relative;
+  //   overflow: hidden;
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    margin-top: 50px;
+    font-size: 40px;
+  }
+
+  article {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 1.7rem;
+  }
+}
+
+.visualWrapper {
+  display: flex;
+  align-items: end;
+  margin-top: 80px;
+
+  img {
+    width: 184px;
+  }
+
+  p {
+    margin-left: 80px;
+    font-size: 25px;
+  }
+}
+
+.colorWrapper {
+  margin-top: 100px;
+  display: flex;
+  // justify-content: space-between;
+
+  &_first,
+  &_second {
+    img {
+      width: 100%;
+    }
+    p {
+      margin-top: 25px;
+      font-size: 25px;
+    }
+  }
+
+  &_second {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-left: 13%;
+  }
+}
+
+.logosWrapper {
+  margin-top: 75px;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.text {
+  margin-top: 25px;
+  font-size: 28px;
+}
+
+.logoProptotype {
+  margin: 65px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    max-width: 547px;
+  }
+  p {
+    font-size: 28px;
+    margin-top: 50px;
+  }
+}
+
+.imageBg {
+  position: relative;
+  margin-left: -50px;
+  margin-top: 100px;
+  margin-right: -50px;
+
+  img {
+    width: 100%;
+  }
+
+  &_gravity {
+    display: block;
+    position: absolute;
+    top: 800px;
+  }
+}
+
+.form {
+  display: flex;
+  margin-top: 1300px;
+  // bottom: 50px;
+  // left: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  .imageBg_gravity {
+    top: 400px;
+  }
+  .form {
+    display: block;
+    margin-top: 800px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .image {
+    margin-left: -51px;
+  }
+
+  .form {
+    display: block;
+    margin-top: 680px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image,
+  .imageBg {
+    margin-right: -10px;
+  }
+
+  .icons {
+    bottom: 30px;
+    right: 20px;
+  }
+
+  .description {
+    h1 {
+      font-size: 54px;
+    }
+  }
+
+  .form {
+    margin-top: 650px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .description {
+    h1 {
+      font-size: 39px;
+    }
+
+    h3 {
+      font-size: 35px;
+    }
+
+    article {
+      margin-top: 20px;
+    }
+  }
+
+  .logoProptotype {
+    img {
+      width: 100%;
+    }
+  }
+
+  .visualWrapper {
+    margin-top: 30px;
+
+    img {
+      width: 184px;
+    }
+
+    p {
+      margin-left: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .colorWrapper {
+    &_first,
+    &_second {
+      img {
+        width: 100%;
+      }
+      p {
+        margin-top: 25px;
+        font-size: 22px;
+      }
+    }
+  }
+
+  .text {
+    font-size: 23px;
+  }
+
+  .logoProptotype {
+    margin: 65px 25px 0;
+    p {
+      font-size: 23px;
+      margin-top: 20px;
+    }
+  }
+  .imageBg {
+    margin-top: 50px;
+    &_gravity {
+      top: 200px;
+    }
+  }
+
+  .form {
+    margin-top: 350px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .description {
+    h1 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 26px;
+      margin-top: 28px;
+    }
+  }
+  .icons {
+    display: flex;
+    position: static;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .visualWrapper {
+    margin-top: 30px;
+
+    img {
+      width: 140px;
+    }
+
+    p {
+      margin-left: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .colorWrapper {
+    flex-direction: column;
+    margin-top: 50px;
+    &_first,
+    &_second {
+      p {
+        margin-top: 15px;
+      }
+    }
+
+    &_second {
+      margin-top: 40px;
+      align-items: start;
+      margin-left: 0;
+    }
+  }
+
+  .logosWrapper {
+    margin-top: 55px;
+  }
+
+  .logoProptotype {
+    margin: 50px 0;
+  }
+}
