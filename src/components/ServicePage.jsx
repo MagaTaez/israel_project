@@ -7,6 +7,7 @@ import Form from '../components/Form';
 import styles from './ServicePage.module.scss';
 
 import arrow from '../assets/Arrow.png';
+import { useTranslation } from 'react-i18next';
 // import cans from '../assets/2_cans.png';
 // import cards from '../assets/Gravity-Card.png';
 // import design from '../assets/art_design.png';
@@ -33,15 +34,6 @@ import arrow from '../assets/Arrow.png';
 //   },
 // ];
 
-const notesList = [
-  { count: '1.', info: 'Creation of a creative concept' },
-  { count: '2.', info: 'Logo development' },
-  { count: '3.', info: 'Creating key visuals' },
-  { count: '4.', info: 'Formation of TOV (tone of voice)' },
-  { count: '5.', info: 'Identity of key media' },
-  { count: '6.', info: 'Brand book preparation' },
-];
-
 // const TopImages = [{ image: cans }, { image: cards }, { image: design }];
 // const BottomImages = [{ image: brochures }, { image: calendar }, { image: rabbit }];
 
@@ -49,16 +41,23 @@ const ServicePage = ({
   headerText,
   sectionTitle,
   firstText,
+  secondText,
   notesArr,
   TopImages = [],
   BottomImages = [],
   OnlyImages = [],
+  stagesList = [],
+  resultText = '',
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.title}>{headerText}</h1>
+      <h1 className={styles.title} data-heading={headerText}>
+        {headerText}
+      </h1>
       <div className={styles.service}>
-        <span>Service</span>
+        <span>{t('servPage_service')}</span>
         <div className={styles.dots_wrapper}>
           <div className={styles.dots_long}></div>
           <div className={styles.dots_short}></div>
@@ -75,10 +74,10 @@ const ServicePage = ({
         </article>
         <aside className={styles.info_right}>
           <div>
-            <a href="#">Submit your application</a>
+            <a href="#">{t('servPage_arrow')}</a>
             <img src={arrow} alt="arrow" />
           </div>
-          <p>we will consult for free and show you where to start</p>
+          <p>{t('servPage_arrText')}</p>
         </aside>
       </section>
       <section className={styles.cards}>
@@ -97,12 +96,9 @@ const ServicePage = ({
           </div>
         ))}
       </section>
-      <article className={styles.article}>
-        "Packaging" and "appearance" of the project is a defining link in the formation of trust among the audience. In
-        addition, a well-designed brand sets a single tone for all points of contact, streamlines and simplifies work.
-      </article>
+      <article className={styles.article}>{secondText}</article>
       <section className={styles.works}>
-        <h3 className={styles.works_subtitle}>Work examples</h3>
+        <h3 className={styles.works_subtitle}>{t('servPage_examples')}</h3>
 
         {/* это статичные фотки */}
         {OnlyImages.length > 0 && (
@@ -165,22 +161,25 @@ const ServicePage = ({
           </div>
         )}
 
-        <h3 className={styles.works_subtitle}>Stages of work</h3>
-        <ol className={styles.list}>
-          {notesList.map((item) => (
-            <li className={styles.list_item}>
-              <span>{item.count}</span> {item.info}
-            </li>
-          ))}
-        </ol>
-        <h3 className={styles.works_subtitle}>Result</h3>
+        {stagesList.length > 0 && (
+          <>
+            <h3 className={styles.works_subtitle}>{t('servPage_stages')}</h3>
+            <ol className={styles.list}>
+              {stagesList.map((item) => (
+                <li className={styles.list_item}>
+                  <span>{item.count}</span> {item.info}
+                </li>
+              ))}
+            </ol>
+          </>
+        )}
 
-        <article className={styles.article}>
-          The key result of the work is the emergence of rules according to which the subsequent marketing support of
-          the product will be carried out by the internal team and any involved marketing contractors, with an
-          understanding of the style and boundaries within which the company's communication with the target audience is
-          built.
-        </article>
+        {resultText !== '' && (
+          <>
+            <h3 className={styles.works_subtitle}>{t('servPage_result')}</h3>
+            <article className={styles.article}>{resultText}</article>
+          </>
+        )}
       </section>
       <div className={styles.form}>
         <Form />

@@ -3,10 +3,43 @@
 }
 
 .title {
+  position: relative;
   margin-top: 30px;
   font-size: 55px;
   font-weight: 800;
+  background-size: contain;
+  line-height: 5rem;
   filter: drop-shadow(0 5px 3px #bfccd8);
+  -webkit-background-clip: text;
+  &::before {
+    content: attr(data-heading);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    mix-blend-mode: screen;
+    animation: shine 3s infinite linear;
+    background-size: 200%;
+    // text-shadow: 2px 2px 10px rgba(#000, 0.2), -2px 2px 10px rgba(#000, 0.2), -2px -2px 10px rgba(#000, 0.2);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 
 .service {
@@ -131,7 +164,7 @@
 .article {
   margin-top: 40px;
   max-width: 700px;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   line-height: 1.4rem;
 }

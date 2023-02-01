@@ -4,62 +4,72 @@ import ServicePage from '../components/ServicePage';
 import african from '../assets/african.png';
 import house from '../assets/house.png';
 import parfume from '../assets/parfume.png';
-
-const notesArr = [
-  {
-    name: 'Retouching for online stores and catalogs',
-    text: 'Operational study and retouching of any quantity photos for the online store catalog',
-    list: [
-      '* Color correction',
-      '* Background cleaning, clipping',
-      '* Removal of acne, bruises and other imperfections in the photo',
-      '* Removal of product defects',
-      '* Deep skin smoothing',
-      '* Working with shadows',
-      '* High level plastic',
-    ],
-  },
-  {
-    name: 'Portrait retouching ',
-    text: 'Handling portrait shots for deletion obvious defects. This retouching includes:',
-    list: [
-      '* Color correction',
-      '* Plastic',
-      '* Removal of acne, bruises and other imperfections in the photo',
-      '* Background cleaning, clipping if necessary',
-      '* Skin smoothing',
-    ],
-  },
-
-  {
-    name: 'Batch color correction',
-    text: 'Bringing a series of images to a single standard. Includes:',
-    list: ['* White balance', '* HSL', '* Light correction', '* Contrast', '* Crop', '* Saturation', '* Brushes'],
-  },
-
-  {
-    name: 'Jewelry retouching',
-    text: 'Development of retouching standards individually for your requirements and retouching photographs of jewelry with preparation for printing catalog and online store',
-    list: [
-      '* Color correction',
-      '* Removing extra glare and reflections',
-      '* Clipping background',
-      '* Alignment of depth and contrast of reflections, shadows and highlights',
-      '* Cleaning of parasitic shades on metals and stones',
-      '* Setting a single tilt angle and position in the frame',
-      '* Drawing the cut of stones and highlights on them',
-      '* Drawing a drop shadow in a single format',
-    ],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const OnlyImages = [african, house, parfume];
 
 const Retouching = () => {
-  const headerText = 'Photo retouching';
-  const sectionTitle = 'Why do you need retouching?';
-  const firstText =
-    'Photo retouching allows you to remove various defects visible in the photo and make the photo deeper, richer and more beautiful. Most often, retouching is used in portrait photography - for close-up portraits, when shooting objects for catalogs and advertising, as well as in any other advertising photography. Regardless of the quality of the source material (and the quality of the organization and conduct of photography), photo retouching is an obligatory stage in the production of photographic products.';
+  const { t } = useTranslation();
+
+  const notesArr = [
+    {
+      name: t('retouche_online'),
+      text: t('retouche_onlineText'),
+      list: [
+        t('retouche_list1'),
+        t('retouche_list2'),
+        t('retouche_list3'),
+        t('retouche_list4'),
+        t('retouche_list5'),
+        t('retouche_list6'),
+        t('retouche_list7'),
+      ],
+    },
+    {
+      name: t('retouche_port'),
+      text: t('retouche_portText'),
+      list: [
+        t('retouche_portList1'),
+        t('retouche_portList2'),
+        t('retouche_portList3'),
+        t('retouche_portList4'),
+        t('retouche_portList5'),
+      ],
+    },
+
+    {
+      name: t('retouche_correct'),
+      text: t('retouche_correctText'),
+      list: [
+        t('retouche_correctList1'),
+        t('retouche_correctList2'),
+        t('retouche_correctList3'),
+        t('retouche_correctList4'),
+        t('retouche_correctList5'),
+        t('retouche_correctList6'),
+      ],
+    },
+
+    {
+      name: t('retouche_jewel'),
+      text: t('retouche_jewelText'),
+      list: [
+        t('retouche_jewelList1'),
+        t('retouche_jewelList2'),
+        t('retouche_jewelList3'),
+        t('retouche_jewelList4'),
+        t('retouche_jewelList5'),
+        t('retouche_jewelList6'),
+        t('retouche_jewelList7'),
+        t('retouche_jewelList8'),
+      ],
+    },
+  ];
+
+  const headerText = t('retouche_header');
+  const sectionTitle = t('retouche_subheader');
+  const firstText = t('retouche_firstText');
+
   return (
     <div>
       <ServicePage

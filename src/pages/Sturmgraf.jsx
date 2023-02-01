@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Form from '../components/Form';
 import Contacts from '../components/Contacts';
 
@@ -16,6 +17,8 @@ import blue from '../assets/color-blue.png';
 import shirts from '../assets/shirts.png';
 
 const Sturmgraf = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.wrapper}>
       <section className={styles.topSection}>
@@ -23,7 +26,7 @@ const Sturmgraf = () => {
           <img src={mainBg} alt="bgImage" /* className={styles.image} */ />
         </div>
         <div className={styles.article}>
-          <h1>Logo for car shop “Sturmgraf”</h1>
+          <h1>{t('sturm_header')}</h1>
           <div className={styles.icons}>
             <Link className={styles.icons_wrapper} to="#">
               <img src={facebook} alt="facebook" />
@@ -38,22 +41,21 @@ const Sturmgraf = () => {
         </div>
       </section>
       <section className={styles.description}>
-        <h3>A task</h3>
+        <h3>{t('sturm_subtitle')}</h3>
         <article>
-          To develop a logo for an online store with auto products. The store is also engaged in the production and sale
-          of stickers for auto topics.
+          {t('sturm_taskText1')}
           <br />
-          The client chose the rabbit from the cartoon "The Secret Life of Pets" as a symbol of their brand. The client
-          wanted a bright and catchy logo.
+          {t('sturm_taskText2')}
         </article>
         <div className={styles.graffiti_wrapper}>
           <img src={graffiti} alt="graffiti" />
         </div>
-        <h3>Decision</h3>
+        <h3>{t('sturm_decision')}</h3>
         <article>
-          The face of the logo is an animal - a rabbit. <br />
-          Details, references, emotion and location of the rabbit were discussed with the client in advance. <br />
-          To visualize the solution, we used the “Tag type” font. Font inspired by graffiti tags.
+          {t('sturm_decisionText1')} <br />
+          {t('sturm_decisionText2')}
+          <br />
+          {t('sturm_decisionText3')}
         </article>
         <div className={styles.markup}>
           <div className={styles.markup_one}>
@@ -66,7 +68,7 @@ const Sturmgraf = () => {
         <div className={styles.logo_images}>
           <img src={rabbits} alt="rabbits" />
         </div>
-        <h3>Merch</h3>
+        <h3>{t('sturm_merch')}</h3>
         <div className={styles.logo_images}>
           <img src={shirts} alt="shirts" />
         </div>

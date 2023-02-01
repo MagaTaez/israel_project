@@ -11,6 +11,14 @@
 
 .link {
   margin: 20px 0;
+  width: 315px; /* добавил потом чтобы текст не вылезал */
+}
+
+.link:hover {
+  .card_wrapper img {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
 
 .card_wrapper {
@@ -19,12 +27,14 @@
   margin-bottom: 15px;
   width: 315px;
   height: 200px;
+  border-radius: 30px;
+  overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    transition: all 0.8s;
   }
 }
 
@@ -36,7 +46,7 @@
   background-color: transparent;
   padding: 5px 10px;
   border: 1px solid #fff;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 .name {

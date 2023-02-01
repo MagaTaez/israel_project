@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import closeIcon from '../assets/close.png';
 import logo from '../assets/logo.png';
+
 import styles from './PopUp.module.scss';
 
 const Popup = ({ setOpened, opened }) => {
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* <div className={cn(styles.overlay )}> */}
@@ -20,35 +24,35 @@ const Popup = ({ setOpened, opened }) => {
             </div>
           </div>
           <div className={styles.middle}>
-            <div className={styles.middle_top}>
+            {/* <div className={styles.middle_top}>
               <NavLink to="/services" className={styles.middle_services}>
                 Services
               </NavLink>
               <NavLink to="*" className={styles.middle_services}>
                 Cases
               </NavLink>
-            </div>
+            </div> */}
             <hr />
             <div className={styles.middle_left}>
-              <div>Develop a website</div>
-              <div>Web design</div>
-              <div>3D visualization</div>
-              <div>Motion design</div>
-              <div>Photo retouching</div>
+              <div>{t('popup_develop')}</div>
+              <div>{t('popup_web')}</div>
+              <div>{t('popup_3d')}</div>
+              <div>{t('popup_motion')}</div>
+              <div>{t('popup_photo')}</div>
             </div>
             <div className={styles.middle_center}>
-              <div>Agency</div>
-              <div>Career</div>
-              <div>Reviews</div>
+              <div>{t('popup_agency')}</div>
+              <div>{t('popup_career')}</div>
+              <div>{t('popup_reviews')}</div>
             </div>
             <div className={styles.middle_right}>
-              <div className={styles.middle_project}>Discuss the project</div>
+              <div className={styles.middle_project}>{t('popup_discuss')}</div>
               <div className={styles.middle_mail}>Jerusalem@mail.ru</div>
               <div className={styles.middle_phone}>+7 (932) 213-45-63</div>
               <a href="#" className={styles.button}>
-                Become a client
+                {t('header_client')}
               </a>
-              <div className={styles.middle_cooperation}>Cooperation</div>
+              <div className={styles.middle_cooperation}>{t('popup_coop')}</div>
               <div className={styles.middle_lastmail}>Jerusalem@mail.ru</div>
             </div>
           </div>

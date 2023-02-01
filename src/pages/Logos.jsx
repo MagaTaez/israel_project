@@ -13,25 +13,7 @@ import design from '../assets/art_design.png';
 import brochures from '../assets/brochures.png';
 import calendar from '../assets/calendar.png';
 import rabbit from '../assets/rabbit.png';
-
-const notesArr = [
-  {
-    name: 'Company',
-    text: 'We make the company understandable for customers and recognizable in the market. We will fix the current brand or create a new image.',
-  },
-  {
-    name: 'Product',
-    text: 'We develop a logo and style for new products, we help to give new life to old ones.',
-  },
-  {
-    name: 'Employer image',
-    text: 'We help companies attract and retain people with the right skills and values.',
-  },
-  {
-    name: 'Event',
-    text: 'We develop the concept and visual identification for events, work through all the media and help in their production.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 // const OnlyImages = [african, house, parfume];
 
@@ -56,11 +38,42 @@ const BottomImages = [
 ];
 
 const Logos = () => {
-  const headerText = 'Logos and corporate identity';
-  const sectionTitle =
-    'The agency includes a team specializing in branding: the development of logos, identities and corporate identity media.';
-  const firstText =
-    'Design development for us is not only creating beautiful packaging for your products, but also increasing the efficiency of improving business efficiency.';
+  const { t } = useTranslation();
+
+  const notesArr = [
+    {
+      name: t('logos_company'),
+      text: t('logos_comText'),
+    },
+    {
+      name: t('logos_product'),
+      text: t('logos_prodText'),
+    },
+    {
+      name: t('logos_employers'),
+      text: t('logos_emplText'),
+    },
+    {
+      name: t('logos_event'),
+      text: t('logos_evText'),
+    },
+  ];
+
+  // пока убрали из проекта
+  // const stagesList = [
+  //   { count: '1.', info: 'Creation of a creative concept' },
+  //   { count: '2.', info: 'Logo development' },
+  //   { count: '3.', info: 'Creating key visuals' },
+  //   { count: '4.', info: 'Formation of TOV (tone of voice)' },
+  //   { count: '5.', info: 'Identity of key media' },
+  //   { count: '6.', info: 'Brand book preparation' },
+  // ];
+
+  const headerText = t('logos_header');
+  const sectionTitle = t('logos_subheader');
+  const firstText = t('logos_text');
+  const secondText = t('logos_botText');
+  const resultText = t('logos_resultText');
 
   return (
     <div>
@@ -68,9 +81,12 @@ const Logos = () => {
         headerText={headerText}
         sectionTitle={sectionTitle}
         firstText={firstText}
+        secondText={secondText}
         notesArr={notesArr}
         TopImages={TopImages}
         BottomImages={BottomImages}
+        resultText={resultText}
+        // stagesList={stagesList}
       />
     </div>
   );

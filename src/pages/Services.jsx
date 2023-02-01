@@ -10,23 +10,26 @@ import visual from '../assets/3DVis.png';
 import design from '../assets/Graphic.png';
 import logos from '../assets/Logos.png';
 import photos from '../assets/Photos.png';
-
-const serviceArr = [
-  { name: 'Animation', link: '#', img: animation },
-  { name: '3D visualization', link: '#', img: visual },
-  { name: 'Graphic and web design', link: '#', img: design },
-  { name: 'Logos and corporate identity', link: '/logos', img: logos },
-  { name: 'Photo retouching', link: '/retouching', img: photos },
-  { name: 'Something else', link: '#', img: photos },
-];
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+
+  const serviceArr = [
+    { name: t('services_animation'), link: '#', img: animation },
+    { name: t('services_viz'), link: '#', img: visual },
+    { name: t('services_graph'), link: '#', img: design },
+    { name: t('services_logos'), link: '/logos', img: logos },
+    { name: t('services_photo'), link: '/retouching', img: photos },
+    { name: t('services_smthing'), link: '#', img: photos },
+  ];
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.card_section}>
         {serviceArr.map((item) => (
           <Link key={item.name} className={styles.link} to={item.link}>
-            <div key={item.name} className={styles.card_wrapper}>
+            <div className={styles.card_wrapper}>
               <img src={item.img} alt={item.name} />
               <div className={styles.service}>Service</div>
             </div>

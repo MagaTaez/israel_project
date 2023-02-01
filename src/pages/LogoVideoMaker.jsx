@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import styles from './LogoVideoMaker.module.scss';
 
@@ -19,6 +20,8 @@ import Form from '../components/Form';
 import Contacts from '../components/Contacts';
 
 const LogoVideoMaker = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.wrapper}>
       <section className={styles.topSection}>
@@ -46,49 +49,47 @@ const LogoVideoMaker = () => {
         {/* </div> */}
       </section>
       <section className={styles.description}>
-        <h1>Logo for videomaker</h1>
-        <h3>A task</h3>
+        <h1>{t('video_header')}</h1>
+        <h3>{t('video_task')}</h3>
         <article>
-          To develop a concise and minimalistic logo for a video maker. The customer also ordered the animation of the
-          logo to be inserted at the beginning and end of the video.
+          {t('video_taskText1')}
           <br /> <br />
-          The customer gave only the name of the company - “REC NO OFF”.
+          {t('video_taskText2')}
         </article>
-        <h3>Decision</h3>
+        <h3>{t('video_decision')}</h3>
         <article>
-          For logo recognition, we chose the shape of the camera aperture.
+          {t('video_decisionText1')}
           <br /> <br />
-          Various color schemes of the logo were considered, but the customer settled on black.
+          {t('video_decisionText2')}
           <br /> <br />
-          For the text we chose 2 fonts - Arial Black Regular and Bahnschrift Regular. It gives the logo seriousness,
-          but at the same time looks friendly.
+          {t('video_decisionText3')}
         </article>
 
         <div className={styles.visualWrapper}>
           <img src={visual1} alt="first" />
-          <p>The first visual image of the logo, which the customer refused</p>
+          <p>{t('video_img1')}</p>
         </div>
         <div className={styles.visualWrapper}>
           <img src={visual2} alt="second" />
-          <p>The second visual image that the customer liked. Let's go further!</p>
+          <p>{t('video_img2')}</p>
         </div>
         <div className={styles.colorWrapper}>
           <div className={styles.colorWrapper_first}>
             <img src={colors} alt="colors" />
-            <p>color palette</p>
+            <p>{t('video_palette')}</p>
           </div>
           <div className={styles.colorWrapper_second}>
             <img src={moreColors} alt="moreColors" />
-            <p>another variations</p>
+            <p>{t('video_var')}</p>
           </div>
         </div>
         <div className={styles.logosWrapper}>
           <img src={colorLogos} alt="colorLogos" />
         </div>
-        <p className={styles.text}>the search continues...</p>
+        <p className={styles.text}>{t('video_search')}</p>
         <div className={styles.logoProptotype}>
           <img src={oneLogo} alt="oneLogo" />
-          <p>the final version, which the customer really liked</p>
+          <p>{t('video_final')}</p>
         </div>
         <div className={styles.imageBg}>
           <img src={premiumBg} alt="premiumBg" />

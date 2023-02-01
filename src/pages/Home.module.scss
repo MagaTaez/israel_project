@@ -4,8 +4,63 @@
   font-size: 80px;
   font-weight: 800;
   margin: 0;
-  filter: drop-shadow(0 5px 3px #bfccd8);
+  background: rgb(19, 20, 21);
+  background: linear-gradient(90deg, rgba(19, 20, 21, 1) 0%, rgb(100, 115, 133) 57%, rgba(24, 44, 65, 1) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  // filter: drop-shadow(0 5px 3px #bfccd8);
+  position: relative;
+  overflow: hidden;
 }
+.header_wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.header_wrapper .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg); // Наклон
+  animation: flareAnimation;
+  left: -150%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  animation: flareAnimation 3s infinite linear; // Время и тип анимации можно менять
+}
+@keyframes flareAnimation {
+  0% {
+    left: -80%;
+  }
+  100% {
+    left: 80%;
+  }
+}
+
+// .title2::before {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 40px;
+//   height: 100%;
+//   z-index: 5;
+//   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+//   filter: blur(8px);
+//   transform: translateX(-60px) skew(-45deg);
+//   animation: move 5s 1s infinite;
+// }
+
+@keyframes move {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 .title2 {
   margin-left: 50px;
 }
@@ -35,6 +90,8 @@
   .home_wrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
   }
 
   .title1,
