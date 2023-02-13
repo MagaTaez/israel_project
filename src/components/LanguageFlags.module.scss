@@ -9,10 +9,9 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  transition: box-shadow 0.2s;
   &:hover {
     box-shadow: 0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #c8d9e9, 2px 2px 2px rgba(255, 225, 219, 0.503);
-
-    transition: box-shadow 0.2s;
   }
 
   img {

@@ -6,14 +6,28 @@
   align-items: center;
   //
   // position: relative;
+
+  &_reversed {
+    flex-direction: row-reverse;
+  }
 }
 
 .first__section {
   display: flex;
   align-items: center;
+
+  &_reversed {
+    flex-direction: row-reverse;
+  }
 }
-.bar__wrapper:hover {
-  cursor: pointer;
+
+.bar {
+  &__bigwrapper {
+    display: flex;
+  }
+  &__wrapper:hover {
+    cursor: pointer;
+  }
 }
 
 .bar1,
@@ -41,14 +55,24 @@
   transform: translate(0, -8px) rotate(45deg);
 }
 
+// language button
+.flags {
+  display: none;
+  margin-right: 25px;
+}
+
 .sections {
   margin-left: 50px;
   display: flex;
   align-items: center;
   //
   position: relative;
-  // width: 590px;
-  // height: 50px;
+
+  &_reversed {
+    flex-direction: row-reverse;
+    margin-left: 0;
+    margin-right: 50px;
+  }
 }
 
 .design {
@@ -71,6 +95,10 @@
 //   // text-shadow: 1px 2px 5px #c8d9e9;
 //   text-shadow: 0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #c8d9e9, 2px 2px 2px rgba(255, 225, 219, 0.503);
 // }
+.sections :global(a.active) {
+  transition: all 0.5s ease 0s;
+  text-shadow: 0 0 30px #fff, 0 0 40px #fff, 0 0 55px #fff, 0 0 75px #c8d9e9, 2px 2px 2px rgba(255, 225, 219, 0.703);
+}
 
 .services {
   font-size: 25px;
@@ -87,8 +115,8 @@
 .sections .marker {
   position: absolute;
   height: 4px;
-  width: 0;
-  left: 0;
+  width: 0; /* вот эти значения меняем динамически */
+  left: 0; /* вот эти значения меняем динамически */
   background: #000;
   bottom: -8px;
   transition: 0.5s;
@@ -100,6 +128,10 @@
   display: flex;
   align-items: center;
   // align-items: center;
+
+  &_reversed {
+    flex-direction: row-reverse;
+  }
 }
 
 .button {
@@ -112,19 +144,28 @@
   font-size: 20px;
   border-radius: 18px;
   margin-right: 30px;
+
+  &_reversed {
+    margin-right: 0;
+    margin-left: 30px;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .sections {
     margin-left: 0;
+
+    .marker {
+      background: #c8d9e9;
+    }
   }
 
-  .sections :global(a.active) {
-    border-bottom: 4px solid #c8d9e9;
-    // text-shadow: 1px 2px 5px #c8d9e9;
-    text-shadow: 0 0 30px #c8d9e9, 0 0 40px #c8d9e9, 0 0 55px #c8d9e9, 0 0 75px #c8d9e9,
-      2px 2px 2px rgba(255, 225, 219, 0.503);
-  }
+  // .sections :global(a.active) {
+  //   border-bottom: 4px solid #c8d9e9;
+  //   // text-shadow: 1px 2px 5px #c8d9e9;
+  //   text-shadow: 0 0 30px #c8d9e9, 0 0 40px #c8d9e9, 0 0 55px #c8d9e9, 0 0 75px #c8d9e9,
+  //     2px 2px 2px rgba(255, 225, 219, 0.503);
+  // }
 
   .design {
     font-size: 18px;
@@ -141,10 +182,22 @@
     padding-bottom: 0;
   }
 
+  .design {
+    overflow: hidden;
+  }
+
   .first__section {
     width: 100%;
     flex-direction: row-reverse;
     justify-content: space-between;
+  }
+
+  .flags {
+    display: block;
+  }
+
+  .marker {
+    display: none;
   }
 
   .design {

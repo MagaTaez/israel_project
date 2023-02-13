@@ -20,18 +20,20 @@ const Popup = ({ setOpened, opened }) => {
             <img onClick={() => setOpened(false)} className={styles.top_closeIcon} src={closeIcon} alt="closeIcon" />
             <div className={styles.top_logo}>
               <img src={logo} alt="logo" />
-              <h4>DESIGN ISRAEL</h4>
+              <NavLink to="/" onClick={() => setOpened(false)}>
+                DESIGN ISRAEL
+              </NavLink>
             </div>
           </div>
           <div className={styles.middle}>
-            {/* <div className={styles.middle_top}>
-              <NavLink to="/services" className={styles.middle_services}>
+            <div className={styles.middle_top}>
+              <NavLink to="/services" onClick={() => setOpened(false)} className={styles.middle_services}>
                 Services
               </NavLink>
-              <NavLink to="*" className={styles.middle_services}>
+              <NavLink to="*" onClick={() => setOpened(false)} className={styles.middle_services}>
                 Cases
               </NavLink>
-            </div> */}
+            </div>
             <hr />
             <div className={styles.middle_left}>
               <div>{t('popup_develop')}</div>

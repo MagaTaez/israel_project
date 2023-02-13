@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import world from '../assets/world.png';
 import { useTranslation } from 'react-i18next';
 
 import russia from '../assets/russia.png';
 import uk from '../assets/uk.png';
 import israel from '../assets/israel.png';
+import { THEME_STANDART, THEME_REVERSED, ThemeContext } from '../App';
 
 import styles from './LanguageFlags.module.scss';
 
 const LanguageFlags = () => {
   const [visibleFlags, setVisibleFlags] = useState(false);
   const flagsRef = React.useRef(null);
+  const { change } = useContext(ThemeContext);
 
   const languages = [
     {
@@ -38,6 +40,13 @@ const LanguageFlags = () => {
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
     setVisibleFlags(false);
+    if (language === 'en' || language === 'ru') {
+      change(THEME_STANDART);
+      console.log(THEME_STANDART);
+    } else {
+      change(THEME_REVERSED);
+      console.log(THEME_REVERSED);
+    }
   };
 
   useEffect(() => {

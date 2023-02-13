@@ -7,6 +7,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import App from './App';
 
+import './scss/index.scss';
+
 //Localisaton
 i18n
   .use(Backend)

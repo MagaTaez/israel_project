@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba($color: #000000, $alpha: 0.5);
-  z-index: 1;
+  z-index: 15;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.4s ease-in-out, visibility 0.5s ease-in-out;
@@ -34,6 +34,7 @@
 .top {
   padding: 10px 30px;
   display: flex;
+  flex-direction: var(--theme-default-popup); /* row */
   align-items: center;
   &_closeIcon {
     width: 25px;
@@ -45,11 +46,13 @@
   }
 
   &_logo {
-    margin-left: 50px;
+    margin-left: var(--theme-default-popupMargin50); /* 50px / 0 */
     display: flex;
     align-items: center;
+    flex-direction: var(--theme-default-popup); /* row/row-reversed */
+    margin-right: var(--theme-default-popupMargin0); /* 0 / 50px */
 
-    h4 {
+    a {
       font-size: 25px;
       font-weight: 800;
       color: #000;
@@ -62,7 +65,8 @@
 
 .middle {
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--theme-default-popupJustifyC); /* space-between, space-around */
+  flex-direction: var(--theme-default-popup); /* row / row-reverse */
 
   &_top {
     display: none;
@@ -94,6 +98,7 @@
     margin-left: 60px;
     font-size: 22px;
     font-weight: 600;
+    text-align: var(--theme-default-popupTextAi); /* left / right */
 
     & div {
       margin-top: 7px;
@@ -101,6 +106,7 @@
   }
 
   &_center {
+    text-align: var(--theme-default-popupTextAi); /* left / right */
     div {
       font-weight: 600;
       font-size: 17px;
@@ -109,6 +115,7 @@
   }
 
   &_right {
+    text-align: var(--theme-default-popupTextAi);
     margin-right: 150px;
     margin-top: 7px;
   }

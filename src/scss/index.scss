@@ -1,0 +1,22 @@
+:root {
+  /* THEMES */
+  --theme-standart-popup: row;
+  --theme-reversed-popup: row-reverse;
+  --theme-default-popup: var(--theme-standart-popup);
+
+  --theme-standart-popupMargin50: 50px;
+  --theme-reversed-popupMargin50: 0;
+  --theme-default-popupMargin50: var(--theme-standart-popupMargin50);
+
+  --theme-standart-popupMargin0: 0;
+  --theme-reversed-popupMargin0: 50px;
+  --theme-default-popupMargin0: var(--theme-standart-popupMargin0);
+
+  --theme-standart-popupJustifyC: space-between;
+  --theme-reversed-popupJustifyC: space-around;
+  --theme-default-popupJustifyC: var(--theme-standart-popupJustifyC);
+
+  --theme-standart-popupTextAi: left;
+  --theme-reversed-popupTextAi: right;
+  --theme-default-popupTextAi: var(--theme-standart-popupTextAi);
+}

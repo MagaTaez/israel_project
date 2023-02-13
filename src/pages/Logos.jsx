@@ -27,14 +27,14 @@ import { useTranslation } from 'react-i18next';
 // ];
 
 const TopImages = [
-  { url: cans, name: 'cans' },
-  { url: cards, name: 'videomaker' },
-  { url: design, name: 'design' },
+  { url: cans, name: '#' },
+  { url: cards, name: '/logos/videomaker' },
+  { url: design, name: '#' },
 ];
 const BottomImages = [
-  { url: brochures, name: 'brochures' },
-  { url: calendar, name: 'calendar' },
-  { url: rabbit, name: 'rabbit' },
+  { url: brochures, name: '#' },
+  { url: calendar, name: '#' },
+  { url: rabbit, name: '/logos/rabbit' },
 ];
 
 const Logos = () => {

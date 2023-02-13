@@ -1,7 +1,9 @@
 .wrapper {
   max-width: 1400px;
+  overflow: hidden;
 }
 
+// это стили для блика
 .title {
   position: relative;
   margin-top: 30px;
@@ -82,6 +84,7 @@
 .info {
   display: flex;
   margin-top: 30px;
+  justify-content: space-between;
 
   &_left {
     max-width: 750px;
@@ -93,14 +96,14 @@
     }
 
     & p {
-      font-size: 19px;
+      font-size: 20px;
       margin-top: 35px;
-      line-height: 1.4rem;
+      line-height: 1.6rem;
     }
   }
 
   &_right {
-    margin-left: 40px;
+    margin-right: 100px;
 
     & div {
       display: flex;
@@ -116,6 +119,7 @@
         margin-left: 7px;
         width: 20px;
         height: 20px;
+        animation: leftRight 2s ease infinite;
       }
     }
     & p {
@@ -127,17 +131,105 @@
 }
 
 .cards {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   // max-width: 800px;
   max-width: 100%;
   margin-top: 30px;
+
+  // добавил новое
+  gap: 30px;
 }
+
+// стили картинок
+.painting,
+.marker,
+.book,
+.paints,
+.ph_emoji,
+.ph_flash,
+.web_icon,
+.keyboard,
+.icons3d,
+.vis1 {
+  position: absolute;
+}
+.painting {
+  top: -122px;
+  right: -5px;
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+}
+.marker {
+  top: 107px;
+  right: 55px;
+  width: 200px;
+  height: 200px;
+}
+.book {
+  bottom: -179px;
+  right: 225px;
+  width: 150px;
+  height: 150px;
+}
+.paints {
+  bottom: -188px;
+  right: 455px;
+  width: 100px;
+  height: 100px;
+}
+.ph_emoji {
+  width: 200px;
+  height: 200px;
+  top: 300px;
+  right: -20px;
+}
+.ph_flash {
+  width: 200px;
+  height: 200px;
+  top: 1000px;
+  right: 100px;
+}
+.web_icon {
+  width: 100px;
+  height: 100px;
+  top: -46px;
+  right: 49px;
+}
+.keyboard {
+  width: 100px;
+  height: 100px;
+  bottom: -70px;
+  right: 300px;
+}
+.icons3d {
+  width: 100px;
+  height: 100px;
+  top: -33px;
+  right: 32px;
+}
+.vis1 {
+  width: 200px;
+  height: 200px;
+  top: -18px;
+  left: 450px;
+}
+
+.card:nth-child(1) {
+  .web_icon {
+    right: -23px;
+  }
+}
+
 .card {
+  position: relative;
   margin-top: 15px;
   // max-width: 340px;
   max-width: 45%;
   margin-right: 30px;
+
   &_name {
     font-size: 20px;
     font-weight: 700;
@@ -170,6 +262,7 @@
 }
 
 .works {
+  position: relative;
   padding: 50px 0;
   &_subtitle {
     font-size: 40px;
@@ -211,6 +304,11 @@
     // height: 50px;
   }
 
+  &_carousel3d {
+    height: 80%;
+    width: 218%;
+  }
+
   //
   &_topCarousel,
   &_bottomCarousel {
@@ -219,7 +317,18 @@
     justify-content: space-around;
     //
     width: 50%;
+
+    //
+    height: 100%;
+    height: 100%;
   }
+
+  // пропр
+
+  // &_topCarousel {
+  //   height: 100%;
+  //   height: 100%;
+  // }
 
   &_card {
     position: relative;
@@ -230,7 +339,7 @@
 
     &_img {
       width: 100%;
-      height: 100%;
+      width: 98%;
       object-fit: cover;
     }
 
@@ -245,6 +354,44 @@
       font-size: 20px;
       letter-spacing: 1px;
     }
+  }
+}
+
+.works_card3d {
+  width: auto;
+  height: auto;
+  margin: 0 15px;
+}
+
+.works {
+  &_miniWrapper {
+    display: flex;
+    position: relative;
+  }
+
+  &_image {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    margin-left: 30%;
+    width: 70px;
+    height: 70px;
+    animation: updown 2s ease infinite;
+  }
+}
+// анимация для стрелочки
+
+@keyframes updown {
+  0% {
+    transform: rotate(3.142rad) translateY(-10%);
+  }
+
+  50% {
+    transform: rotate(3.142rad) translateY(25%);
+  }
+
+  100% {
+    transform: rotate(3.142rad) translateY(-10%);
   }
 }
 
@@ -267,9 +414,29 @@
   }
 }
 
+.detailList {
+  max-width: 45%;
+
+  &_item {
+    position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 35px;
+
+    hr {
+      margin: 15px 0 20px 0;
+    }
+
+    article {
+      font-weight: 600;
+      font-size: 22px;
+    }
+  }
+}
+
 .form {
   display: flex;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 //
@@ -315,9 +482,27 @@
       margin-bottom: 15px;
     }
     &_smallWrapper {
-      height: 290px;
+      height: 270px;
     }
   }
+
+  .info_right {
+    margin-right: 0;
+  }
+
+  .ph_emoji {
+    width: 150px;
+    height: 150px;
+    top: 400px;
+    right: -20px;
+  }
+  .ph_flash {
+    width: 150px;
+    height: 150px;
+    top: 1000px;
+    right: 100px;
+  }
+
   .form {
     display: block;
     margin-top: 40px;
@@ -328,6 +513,42 @@
     top: 15px;
     right: 14px;
   }
+
+  .animate3d {
+    top: 60%;
+  }
+  .topCarousel3d {
+    height: 85%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .painting {
+    top: -15px;
+    right: 29px;
+    width: 150px;
+    height: 150px;
+  }
+  .marker {
+    top: 108px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+  }
+  .book {
+    bottom: -179px;
+    right: 35px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .works {
+    &_smallWrapper {
+      height: 249px;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -336,9 +557,63 @@
     font-size: 45px;
   }
 
+  .info_right {
+    div {
+      a {
+        font-size: 19px;
+      }
+    }
+  }
+
+  .painting {
+    top: -15px;
+    width: 90px;
+    height: 90px;
+  }
+  .marker {
+    top: 128px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+  }
+  .book {
+    display: none;
+  }
+  .paints {
+    bottom: -170px;
+    right: 255px;
+    width: 70px;
+    height: 70px;
+  }
+  .ph_flash {
+    width: 100px;
+    height: 100px;
+    top: 1100px;
+    right: 20px;
+  }
+  .icons3d {
+    width: 80px;
+    height: 80px;
+    top: -33px;
+    right: -28px;
+  }
+  .vis1 {
+    width: 150px;
+    height: 150px;
+    top: -18px;
+    left: 400px;
+  }
+
+  .works {
+    &_image {
+      left: auto;
+      right: 100px;
+    }
+  }
+
   .works {
     &_smallWrapper {
-      height: 230px;
+      height: 213px;
     }
 
     //
@@ -350,6 +625,22 @@
       //
       width: 50%;
     }
+
+    // &_card3d {
+    //   height: 150px;
+    // }
+  }
+
+  .animate3d {
+    top: 50%;
+  }
+
+  .topCarousel3d {
+    height: 100%;
+  }
+
+  .detailList {
+    max-width: 65%;
   }
 }
 
@@ -369,7 +660,7 @@
   .info_right {
     div {
       a {
-        font-size: 20px;
+        font-size: 15px;
       }
     }
 
@@ -378,12 +669,49 @@
     }
   }
 
+  .web_icon {
+    width: 100px;
+    height: 100px;
+    top: -46px;
+    right: -10px;
+  }
+  .keyboard {
+    width: 80px;
+    height: 80px;
+    bottom: -30px;
+    right: 150px;
+  }
+  .icons3d {
+    width: 80px;
+    height: 80px;
+    right: -75px;
+  }
+  .vis1 {
+    width: 130px;
+    height: 130px;
+    top: -18px;
+    left: 400px;
+  }
+
+  .card:nth-child(1) {
+    .web_icon {
+      right: -77px;
+    }
+  }
+
+  .works {
+    &_image {
+      left: auto;
+      right: -12px;
+    }
+  }
+
   .works {
     &_subtitle {
       margin-bottom: 15px;
     }
     &_smallWrapper {
-      height: 180px;
+      height: 165px;
     }
 
     &_cardOnly,
@@ -396,6 +724,8 @@
     }
 
     &_card_case {
+      // top: 31px;
+      // right: 27px;
       top: 9px;
       right: 11px;
       font-size: 14px;
@@ -436,12 +766,70 @@
     }
 
     &_right {
-      margin: 35px 0 0 0;
+      div {
+        a {
+          font-size: 20px;
+        }
+      }
     }
+  }
+
+  .paints {
+    bottom: -205px;
+    right: 75px;
+  }
+
+  .painting {
+    top: -15px;
+    width: 70px;
+    height: 70px;
+  }
+  .marker {
+    top: 168px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+  .ph_emoji {
+    width: 100px;
+    height: 100px;
+    top: 590px;
+    right: -20px;
+  }
+  .web_icon {
+    width: 100px;
+    height: 100px;
+    top: -46px;
+    right: 10px;
+  }
+  .keyboard {
+    width: 80px;
+    height: 80px;
+    bottom: -30px;
+    right: 50px;
+  }
+  .vis1 {
+    width: 100px;
+    height: 100px;
+    top: -2px;
+    left: 308px;
   }
 
   .smallScreen {
     display: none;
+  }
+
+  .detailList {
+    max-width: 80%;
+  }
+
+  .works {
+    &_image {
+      margin-left: 10%;
+      width: 70px;
+      height: 70px;
+      animation: updown 2s ease infinite;
+    }
   }
 
   .works {
@@ -486,6 +874,10 @@
       // border-radius: 25px;
       // overflow: hidden;
     }
+    &_card_case {
+      top: 31px;
+      right: 27px;
+    }
   }
 
   .works_topCarousel:nth-child(2),
@@ -513,6 +905,7 @@
 
   .article {
     max-width: 90%;
+    margin-top: 20px;
   }
 
   // .form {
@@ -530,9 +923,85 @@
     margin-bottom: 25px;
   }
 
+  .info_right3d {
+    margin: 15px 0 0 0;
+  }
+
+  // картинки
+  .ph_emoji {
+    width: 100px;
+    height: 100px;
+    top: 680px;
+    right: -20px;
+  }
+  .ph_flash {
+    width: 70px;
+    height: 70px;
+    top: 1600px;
+    right: 20px;
+  }
+  .icons3d {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    right: -30px;
+  }
+  .vis1 {
+    width: 80px;
+    height: 80px;
+    top: 47px;
+    left: 248px;
+  }
+
+  .cards {
+    margin-top: 10px;
+  }
+
+  .works3d {
+    padding: 10px 0 40px 0;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .detailList {
+    max-width: 90%;
+  }
+
+  .works_smallWrapper {
+    margin: 0 auto;
+  }
+
+  .works {
+    &_image {
+      display: none;
+    }
+  }
+
+  .animate,
+  .animateRight {
+    width: 108%;
+    transform: translate(-14px, 0); /* тут поменял для анимации в другую сторону */
+  }
+
   .list_item {
     span {
       margin-right: 15px;
     }
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  50% {
+    transform: translateX(65%);
+  }
+
+  100% {
+    transform: translateX(-15%);
   }
 }

@@ -10,18 +10,19 @@ import visual from '../assets/3DVis.png';
 import design from '../assets/Graphic.png';
 import logos from '../assets/Logos.png';
 import photos from '../assets/Photos.png';
+import web from '../assets/development.png';
 import { useTranslation } from 'react-i18next';
 
 const Services = () => {
   const { t } = useTranslation();
 
   const serviceArr = [
-    { name: t('services_animation'), link: '#', img: animation },
-    { name: t('services_viz'), link: '#', img: visual },
+    { name: t('services_animation'), link: '/animation', img: animation },
+    { name: t('services_viz'), link: '/3dvisualization', img: visual },
     { name: t('services_graph'), link: '#', img: design },
     { name: t('services_logos'), link: '/logos', img: logos },
     { name: t('services_photo'), link: '/retouching', img: photos },
-    { name: t('services_smthing'), link: '#', img: photos },
+    { name: t('services_webDev'), link: '/webdevelopment', img: web },
   ];
 
   return (

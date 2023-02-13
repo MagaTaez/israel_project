@@ -1,0 +1,271 @@
+.topSection {
+  position: relative;
+}
+
+.image {
+  position: relative;
+  margin-left: -50px;
+  margin-top: -15px;
+  margin-right: -50px;
+  img {
+    width: 100%;
+    max-height: 562px;
+  }
+  h1 {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    color: #fff;
+    font-size: 65px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    padding: 5px 10px;
+    display: inline-block;
+  }
+}
+
+.description {
+  .subheader {
+    font-size: 45px;
+    line-height: 3rem;
+    font-weight: 700;
+    margin: 30px 0 20px 0;
+  }
+
+  p {
+    font-size: 22px;
+    font-weight: 400;
+    width: 70%;
+    line-height: 1.9rem;
+  }
+
+  .taskWrapper {
+    display: flex;
+    justify-content: space-between;
+    aside {
+      flex: 0.8;
+      div {
+        padding: 20px 10px;
+        background-color: #c8d9e9;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.9rem;
+      }
+    }
+  }
+
+  .quote {
+    font-size: 23px;
+    color: #8a8a8a;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .bigPictureWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 60%;
+    align-items: end;
+    //  align-items: end;
+    img {
+      margin: 25px 0 5px 0;
+      width: 100%;
+    }
+    span {
+      color: #8f8f8f;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+  }
+  //   .bigPicture {
+  //     margin-top: 25px;
+  //     display: block;
+  //   }
+
+  .wrapper3d {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      width: 418px;
+      height: 233px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .videoWrapper {
+    video {
+      margin-top: 25px;
+      width: 60%;
+      // height: 400px;
+      // flex: 1.5;
+      height: auto;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  .form {
+    display: block;
+    top: 350px;
+  }
+
+  .contacts {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .image {
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  .description {
+    .taskWrapper {
+      display: flex;
+      justify-content: space-between;
+      aside {
+        div {
+          font-size: 19px;
+          line-height: 1.6rem;
+        }
+      }
+    }
+
+    .bigPictureWrapper {
+      width: 70%;
+    }
+
+    p {
+      line-height: 1.7rem;
+    }
+    .videoWrapper {
+      video {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image {
+    h1 {
+      font-size: 45px;
+      width: 80%;
+    }
+  }
+
+  .description {
+    .subheader {
+      font-size: 40px;
+    }
+
+    .taskWrapper {
+      display: flex;
+      flex-direction: column;
+      aside {
+        margin-top: 20px;
+        width: 70%;
+      }
+    }
+
+    p {
+      font-size: 21px;
+    }
+
+    .videoWrapper {
+      flex-direction: column;
+      // align-items: center;
+
+      video {
+        //   flex: 1;
+        width: 80%;
+        margin: 25px auto;
+      }
+    }
+
+    article {
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image {
+    h1 {
+      font-size: 33px;
+      width: 70%;
+    }
+  }
+
+  .description {
+    .subheader {
+      font-size: 37px;
+      margin: 26px 0 6px 0;
+    }
+
+    .taskWrapper {
+      aside {
+        width: 100%;
+      }
+    }
+
+    .bigPictureWrapper {
+      width: 100%;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    .wrapper3d {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .videoWrapper {
+      video {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .image {
+    h1 {
+      font-size: 29px;
+    }
+  }
+
+  .description {
+    .subheader {
+      font-size: 33px;
+    }
+
+    p {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    .imgWrapper {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

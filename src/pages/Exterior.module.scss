@@ -1,0 +1,199 @@
+.topSection {
+  position: relative;
+}
+
+.image {
+  position: relative;
+  margin-left: -50px;
+  margin-top: -15px;
+  margin-right: -50px;
+  img {
+    width: 100%;
+    max-height: 562px;
+  }
+  h1 {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    color: #fff;
+    font-size: 80px;
+  }
+}
+
+.description {
+  margin-top: 55px;
+  position: relative;
+  height: calc(100% + 100px);
+  //   overflow: hidden;
+  h3 {
+    font-size: 40px;
+  }
+
+  article {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.7rem;
+    max-width: 1000px;
+  }
+}
+
+.taskImg_wrapper {
+  position: relative;
+  margin-top: 70px;
+  margin-left: -50px;
+  margin-right: -50px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 90px;
+    left: 70px;
+    color: #fff;
+    font-size: 80px;
+  }
+}
+
+.imgExamples {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 30px;
+
+  img {
+    width: 45%;
+  }
+}
+
+.form {
+  display: flex;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  .form {
+    display: block;
+    top: 350px;
+  }
+
+  .images {
+    &_left {
+      gap: 35px;
+    }
+
+    &_right {
+      gap: 15px;
+    }
+  }
+
+  .contacts {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .image {
+    h1 {
+      font-size: 59px;
+    }
+  }
+
+  .taskImg_wrapper {
+    h2 {
+      font-size: 67px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image {
+    h1 {
+      font-size: 54px;
+      width: 80%;
+    }
+  }
+
+  .description {
+    margin-top: 40px;
+
+    h3 {
+      font-size: 38px;
+    }
+    article {
+      margin-top: 19px;
+      font-size: 21px;
+    }
+  }
+
+  .taskImg_wrapper {
+    h2 {
+      font-size: 59px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image {
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  .description {
+    margin-top: 25px;
+    //   overflow: hidden;
+    article {
+      margin-top: 15px;
+      font-size: 19px;
+    }
+    h3 {
+      font-size: 32px;
+    }
+  }
+
+  .taskImg_wrapper {
+    margin-top: 40px;
+    h2 {
+      bottom: 30px;
+      line-height: 3.5rem;
+      font-size: 59px;
+    }
+  }
+
+  .imgExamples {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .image {
+    h1 {
+      font-size: 35px;
+    }
+  }
+
+  .description {
+    font-size: 28px;
+    //   overflow: hidden;
+    article {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 34px;
+    }
+  }
+
+  .taskImg_wrapper {
+    h2 {
+      font-size: 49px;
+    }
+  }
+}
