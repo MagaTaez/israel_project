@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import Masonry from 'react-masonry-css';
 
 import Form from '../components/Form';
@@ -33,6 +34,8 @@ import card_corona from '../assets/card_corona.png';
 import art_design from '../assets/art_design.png';
 
 const Cases = () => {
+  const { t } = useTranslation();
+
   const imageList = [
     { image: rabbit, style: styles.item1, link: '/logos/rabbit', category: 'Logos' },
     { image: interier, style: styles.item2, link: '/3dvisualization/interior', category: '3D visualization' },
@@ -62,13 +65,13 @@ const Cases = () => {
   const [selectedCategory, setSelectedCategory] = useState([]);
 
   const types = [
-    'All Cases',
-    'Animation',
-    '3D visualization',
-    'Graphic & design',
-    'Logos',
-    'Retouching',
-    'Web Development',
+    { type: 'All Cases', name: t('cases_all') },
+    { type: 'Animation', name: t('cases_anim') },
+    { type: '3D visualization', name: t('3D visualization') },
+    { type: 'Graphic & design', name: t('cases_design') },
+    { type: 'Logos', name: t('cases_logos') },
+    { type: 'Retouching', name: t('cases_retouche') },
+    { type: 'Web Development', name: t('cases_dev') },
   ];
 
   const popupRef = React.useRef(null);
@@ -77,10 +80,10 @@ const Cases = () => {
 
   // это список с отфильтрованными айтемами
   const filteredList = useMemo(() => {
-    if (!selected || types[selected] == 'All Cases') {
+    if (!selected || types[selected].type == 'All Cases') {
       return imageList;
     }
-    return imageList.filter((item) => item.category == types[selected]);
+    return imageList.filter((item) => item.category == types[selected].type);
   }, [selectedCategory]);
 
   const onClickPopup = (i) => {
@@ -104,16 +107,16 @@ const Cases = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.casesWrapper}>
       <div className={styles.popupWrapper}>
         <button ref={popupRef} className={styles.casesButton} onClick={() => setOpen(!open)}>
-          {types[selected]}
+          {types[selected].name}
           <img src={vector} alt="vector" />
         </button>
         <ul className={`${styles.popup} ${open == true ? styles.popupActive : ''}`}>
           {types.map((item, i) => (
             <li key={i} className={selected == i ? styles.activeType : ''} onClick={() => onClickPopup(i)}>
-              {item}
+              {item.name}
             </li>
           ))}
         </ul>

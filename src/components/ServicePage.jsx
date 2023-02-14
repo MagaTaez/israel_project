@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import cn from 'classnames';
 
 import Contacts from '../components/Contacts';
@@ -7,7 +9,6 @@ import Form from '../components/Form';
 import styles from './ServicePage.module.scss';
 
 import arrow from '../assets/Arrow.png';
-import { useTranslation } from 'react-i18next';
 
 import painting from '../assets/logos_paint.png';
 import marker from '../assets/logos_marker.png';

@@ -251,5 +251,13 @@
   "web_header": "Web development",
   "web_subheader": "Why do you need a website?",
   "web_text1": "'A business’s online presence, regardless of industry, can have a massive impact on its success. In this day and age, some businesses still don’t realize that a majority of their customers will visit their website before making a purchase.'",
-  "web_text2": "In the end you get a website that you get a project that will not only be the face of you or your business but also a project that will bring you money in the future initial SEO setup."
+  "web_text2": "In the end you get a website that you get a project that will not only be the face of you or your business but also a project that will bring you money in the future initial SEO setup.",
+
+  "cases_all": "All Cases",
+  "cases_anim": "Animation",
+  "cases_3d": "3D visualization",
+  "cases_design": "Graphic & design",
+  "cases_logos": "Logos",
+  "cases_retouche": "Retouching",
+  "cases_dev": "Web Development"
 }

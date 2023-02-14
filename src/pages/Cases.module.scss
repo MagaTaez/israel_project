@@ -148,6 +148,10 @@
 //
 //
 
+// .casesWrapper {
+//   margin-top: -20px;
+// }
+
 .popupWrapper {
   position: relative;
 }
@@ -306,4 +310,52 @@
 .form {
   display: flex;
   margin-top: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  .form {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .casesButton {
+    margin-top: 0;
+  }
+
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cardContainer {
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .form {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+
+    a {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .cardContainer {
+    a {
+      width: 100%;
+    }
+  }
 }
