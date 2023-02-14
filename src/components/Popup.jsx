@@ -30,7 +30,7 @@ const Popup = ({ setOpened, opened }) => {
               <NavLink to="/services" onClick={() => setOpened(false)} className={styles.middle_services}>
                 Services
               </NavLink>
-              <NavLink to="*" onClick={() => setOpened(false)} className={styles.middle_services}>
+              <NavLink to="/cases" onClick={() => setOpened(false)} className={styles.middle_services}>
                 Cases
               </NavLink>
             </div>
