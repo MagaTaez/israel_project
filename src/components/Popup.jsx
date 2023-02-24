@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import closeIcon from '../assets/close.png';
@@ -36,17 +36,27 @@ const Popup = ({ setOpened, opened }) => {
             </div>
             <hr />
             <div className={styles.middle_left}>
-              <div>{t('popup_develop')}</div>
-              <div>{t('popup_web')}</div>
-              <div>{t('popup_3d')}</div>
-              <div>{t('popup_motion')}</div>
-              <div>{t('popup_photo')}</div>
+              <Link to="/webdevelopment" onClick={() => setOpened(false)}>
+                {t('popup_develop')}
+              </Link>
+              <Link to="" onClick={() => setOpened(false)}>
+                {t('popup_web')}
+              </Link>
+              <Link to="/3dvisualization" onClick={() => setOpened(false)}>
+                {t('popup_3d')}
+              </Link>
+              <Link to="/animation" onClick={() => setOpened(false)}>
+                {t('popup_motion')}
+              </Link>
+              <Link to="/retouching" onClick={() => setOpened(false)}>
+                {t('popup_photo')}
+              </Link>
             </div>
-            <div className={styles.middle_center}>
+            {/* <div className={styles.middle_center}>
               <div>{t('popup_agency')}</div>
               <div>{t('popup_career')}</div>
               <div>{t('popup_reviews')}</div>
-            </div>
+            </div> */}
             <div className={styles.middle_right}>
               <div className={styles.middle_project}>{t('popup_discuss')}</div>
               <div className={styles.middle_mail}>Jerusalem@mail.ru</div>

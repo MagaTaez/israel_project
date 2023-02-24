@@ -27,13 +27,13 @@ import { useTranslation } from 'react-i18next';
 // ];
 
 const TopImages = [
-  { url: cans, name: '#' },
+  { url: cans, name: '/logos/package' },
   { url: cards, name: '/logos/videomaker' },
-  { url: design, name: '#' },
+  { url: design, name: '/logos/poster' },
 ];
 const BottomImages = [
-  { url: brochures, name: '#' },
-  { url: calendar, name: '#' },
+  { url: brochures, name: '/logos/vinyl' },
+  { url: calendar, name: '/logos/dali' },
   { url: rabbit, name: '/logos/rabbit' },
 ];
 

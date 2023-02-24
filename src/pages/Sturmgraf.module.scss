@@ -7,9 +7,12 @@
   margin-left: -50px;
   margin-top: -15px;
   margin-right: -50px;
+  border-radius: 50px 0 0 0;
+  overflow: hidden;
   img {
     width: 100%;
     max-height: 562px;
+    object-fit: cover;
   }
 }
 
@@ -24,6 +27,10 @@
 
   h1 {
     font-size: 60px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    padding: 5px 10px;
+    display: inline-block;
   }
 }
 
@@ -256,6 +263,11 @@
 }
 
 @media screen and (max-width: 415px) {
+  .article {
+    h1 {
+      font-size: 34px;
+    }
+  }
   .description {
     article {
       margin-top: 13px;

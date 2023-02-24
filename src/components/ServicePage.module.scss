@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 1400px;
+  // max-width: 1400px;
   overflow: hidden;
 }
 
@@ -82,6 +82,7 @@
 }
 
 .info {
+  gap: 30px;
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
@@ -264,33 +265,65 @@
 .works {
   position: relative;
   padding: 50px 0;
-  &_subtitle {
+  &_subtitle,
+  &_subtitleStatic {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 45px;
   }
 
   &_onlyCarousel {
-    display: block;
-    max-width: 1300px;
+    display: flex;
+    // max-width: 1300px;
+    gap: 30px;
+    flex-wrap: wrap;
     margin-bottom: 50px;
   }
 
   &_cardOnly {
-    display: flex;
-  }
-  &_cardOnly:nth-child(2) {
-    justify-content: flex-end;
-    margin: 50px 0;
+    width: 45%;
+    height: 30%;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.8s;
+
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    }
+    div {
+      position: absolute;
+      right: 17px;
+      bottom: 19px;
+      font-size: 24px;
+      color: #fff;
+      border-radius: 22px;
+      padding: 8px 18px;
+      background-color: #272727;
+    }
   }
 
   //
   &_smallWrapper {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 623px;
     overflow: hidden;
   }
+
+  // &_smallWrapper {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 350px;
+  //   overflow: hidden;
+  // }
 
   //
   &_carousel {
@@ -368,31 +401,6 @@
     display: flex;
     position: relative;
   }
-
-  &_image {
-    position: absolute;
-    top: 0;
-    left: 50px;
-    margin-left: 30%;
-    width: 70px;
-    height: 70px;
-    animation: updown 2s ease infinite;
-  }
-}
-// анимация для стрелочки
-
-@keyframes updown {
-  0% {
-    transform: rotate(3.142rad) translateY(-10%);
-  }
-
-  50% {
-    transform: rotate(3.142rad) translateY(25%);
-  }
-
-  100% {
-    transform: rotate(3.142rad) translateY(-10%);
-  }
 }
 
 .list {
@@ -400,6 +408,7 @@
   margin-bottom: 60px;
 
   &_item {
+    line-height: 2rem;
     display: list-item;
     list-style-position: inside;
     margin: 15px 0;
@@ -415,7 +424,8 @@
 }
 
 .detailList {
-  max-width: 45%;
+  display: flex;
+  gap: 30px;
 
   &_item {
     position: relative;
@@ -481,6 +491,7 @@
     &_subtitle {
       margin-bottom: 15px;
     }
+
     &_smallWrapper {
       height: 270px;
     }
@@ -488,6 +499,7 @@
 
   .info_right {
     margin-right: 0;
+    margin-top: 30px;
   }
 
   .ph_emoji {
@@ -522,7 +534,22 @@
   }
 }
 
+@media screen and (max-width: 2000px) {
+  .works_smallWrapper {
+    height: 512px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .works_smallWrapper {
+    height: 363px;
+  }
+}
+
 @media screen and (max-width: 1250px) {
+  .works_smallWrapper {
+    height: 276px;
+  }
+
   .painting {
     top: -15px;
     right: 29px;
@@ -608,6 +635,12 @@
     &_image {
       left: auto;
       right: 100px;
+    }
+
+    &_cardOnly {
+      div {
+        font-size: 18px;
+      }
     }
   }
 
@@ -704,6 +737,10 @@
       left: auto;
       right: -12px;
     }
+
+    &_cardOnly {
+      width: 100%;
+    }
   }
 
   .works {
@@ -750,6 +787,7 @@
 
   .title {
     font-size: 35px;
+    line-height: 3rem;
   }
 
   .info {
@@ -917,6 +955,10 @@
 @media screen and (max-width: 415px) {
   .wrapper {
     margin: 0 10px;
+  }
+
+  .dots_wrapper {
+    display: none;
   }
 
   .works_subtitle {

@@ -49,7 +49,7 @@ const Cases = () => {
     { image: art, style: styles.item10, link: '/3dvisualization/artobject', category: '3D visualization' },
     { image: brochures, style: styles.item11, link: '/logos', category: 'Logos' },
     { image: hub, style: styles.item12, link: '/animation', category: 'Animation' },
-    { image: swiss, style: styles.item13, link: '/webdevelopment', category: 'Web Development' },
+    { image: swiss, style: styles.item13, link: '/webdevelopment/valkirye', category: 'Web Development' },
     { image: internet, style: styles.item13, link: '/animation/nexign', category: 'Animation' },
     { image: visual3d, style: styles.item13, link: '/3dvisualization/park', category: '3D visualization' },
     { image: Gravity_Card, style: styles.item13, link: '/logos/videomaker', category: 'Logos' },
@@ -109,7 +109,10 @@ const Cases = () => {
   return (
     <div className={styles.casesWrapper}>
       <div className={styles.popupWrapper}>
-        <button ref={popupRef} className={styles.casesButton} onClick={() => setOpen(!open)}>
+        <button
+          ref={popupRef}
+          className={`${styles.casesButton} ${open ? styles.activeButton : ''}`}
+          onClick={() => setOpen(!open)}>
           {types[selected].name}
           <img src={vector} alt="vector" />
         </button>

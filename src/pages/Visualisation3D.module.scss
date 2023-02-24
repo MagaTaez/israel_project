@@ -1,0 +1,813 @@
+.wrapper {
+  //   max-width: 1400px;
+  overflow: hidden;
+}
+
+// это стили для блика
+.title {
+  position: relative;
+  margin-top: 30px;
+  font-size: 55px;
+  font-weight: 800;
+  background-size: contain;
+  line-height: 5rem;
+  filter: drop-shadow(0 5px 3px #bfccd8);
+  -webkit-background-clip: text;
+  &::before {
+    content: attr(data-heading);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    mix-blend-mode: screen;
+    animation: shine 3s infinite linear;
+    background-size: 200%;
+    // text-shadow: 2px 2px 10px rgba(#000, 0.2), -2px 2px 10px rgba(#000, 0.2), -2px -2px 10px rgba(#000, 0.2);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.service {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+
+  & span {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border: 2px solid black;
+    background-repeat: 20px;
+    border-radius: 20px;
+  }
+}
+
+.dots {
+  &_wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &_long {
+    margin-right: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  &_short {
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+  }
+}
+
+.info {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  //   gap: 30px;
+
+  &_left {
+    //  max-width: 750px;
+
+    & h4 {
+      font-size: 30px;
+      font-weight: 700;
+      max-width: 750px;
+    }
+  }
+
+  &_right {
+    position: relative;
+    margin: 0 100px;
+    //  width: 310px;
+
+    & div {
+      display: flex;
+      align-items: center;
+      width: 108%;
+      position: relative;
+
+      & a {
+        font-size: 25px;
+        font-weight: 700;
+        color: #c8d9e9;
+        border-bottom: 3px solid #c8d9e9;
+        // width: 100%;
+      }
+    }
+    & p {
+      font-size: 20px;
+      max-width: 280px;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+    img {
+      margin-left: 7px;
+      width: 20px;
+      height: 20px;
+      animation: leftRight 2s ease infinite;
+      position: absolute;
+      top: 7px;
+      right: -12px;
+    }
+  }
+}
+
+// .arch {
+//    margin-top: 30px;
+//    max-width: 600px;
+// }
+
+.cards {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  img {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    right: -2px;
+    top: 50px;
+  }
+}
+
+// стили картинок
+.icons3d,
+.vis1 {
+  position: absolute;
+}
+
+.icons3d {
+  width: 100px;
+  height: 100px;
+  top: -33px;
+  right: 32px;
+}
+.vis1 {
+  width: 200px;
+  height: 200px;
+  top: -18px;
+  left: 525px;
+}
+
+.card {
+  position: relative;
+  margin-top: 15px;
+  margin-right: 30px;
+  max-width: 710px;
+
+  &_name {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 2.9rem;
+  }
+
+  &_text {
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.7rem;
+  }
+
+  &_list {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4rem;
+  }
+}
+
+.works {
+  position: relative;
+  margin-top: 30px;
+  padding: 10px 0 40px 0;
+  &_subtitle
+ /*  &_subtitleStatic  */ {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 45px;
+  }
+
+  //
+  &_smallWrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  //
+  &_carousel {
+    // display: block;
+    margin-bottom: 50px;
+    //
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 80%;
+    width: 218%;
+  }
+
+  //
+  &_topCarousel,
+  &_bottomCarousel {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    //
+    width: 50%;
+
+    //
+    height: 100%;
+    height: 100%;
+  }
+
+  .topCarousel {
+    height: 85%;
+  }
+
+  // пропр
+
+  &_card {
+    position: relative;
+    //  width: 30%;
+    //  height: 330;
+    border-radius: 25px;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    margin: 0 15px;
+
+    &_img {
+      width: 100%;
+      width: 98%;
+      object-fit: cover;
+    }
+
+    &_case {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      padding: 8px 18px;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.works {
+  &_miniWrapper {
+    display: flex;
+    position: relative;
+    margin-top: 30px;
+  }
+}
+
+.list {
+  padding: 0;
+  margin-bottom: 60px;
+
+  &_item {
+    line-height: 2rem;
+    display: list-item;
+    list-style-position: inside;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+
+    & span {
+      font-weight: 700;
+      margin-right: 35px;
+      font-size: 18px;
+    }
+  }
+}
+
+.detailList {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+
+  &_item {
+    position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    max-width: 520px;
+
+    hr {
+      margin: 15px 0 20px 0;
+    }
+
+    article {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 2rem;
+    }
+  }
+
+  //   &_item:nth-child(1) {
+  //     .icons3d {
+  //       right: 5%;
+  //     }
+  //   }
+}
+
+.form {
+  display: flex;
+}
+
+//
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%; /* тут поменял для анимации в другую сторону */
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%; /* тут поменял для анимации в другую сторону */
+  }
+}
+//
+.animate,
+.animateRight {
+  width: 200%;
+  animation: marquee 20s linear infinite;
+  top: 50%;
+  transform: translate(0, -60%); /* тут поменял для анимации в другую сторону */
+}
+.amimate {
+  top: 60%;
+}
+
+.animateRight {
+  animation: marqueeRight 20s linear infinite;
+  transform: translate(-50%, -60%);
+}
+
+.animate:hover,
+.animateRight:hover {
+  animation-play-state: paused;
+}
+
+@media screen and (max-width: 1300px) {
+  .works {
+    //  &_subtitle {
+    //    margin-bottom: 15px;
+    //  }
+
+    &_smallWrapper {
+      height: 270px;
+    }
+  }
+
+  //   .info_right {
+  //     margin-right: 30px;
+  //   }
+
+  .form {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .works_card_case {
+    font-size: 15px;
+    top: 15px;
+    right: 14px;
+  }
+
+  //   .detailList_item:nth-child(1) {
+  //     .icons3d {
+  //       width: 80px;
+  //       height: 80px;
+  //       right: -5%;
+  //     }
+  //   }
+
+  .animate3d {
+    top: 60%;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .info_right {
+    margin: 0 50px;
+  }
+  .works {
+    &_smallWrapper {
+      height: 249px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    margin-top: 0;
+    font-size: 45px;
+  }
+
+  .info_right {
+    div {
+      a {
+        font-size: 19px;
+      }
+      p {
+        font-size: 17px;
+      }
+    }
+
+    img {
+      top: 2px;
+      left: 215px;
+    }
+  }
+
+  .icons3d {
+    width: 80px;
+    height: 80px;
+    top: -33px;
+    right: -28px;
+  }
+  .vis1 {
+    width: 150px;
+    height: 150px;
+    top: -18px;
+    left: 400px;
+  }
+
+  .card {
+    max-width: 70%;
+
+    .works {
+      &_smallWrapper {
+        height: 213px;
+      }
+    }
+
+    //
+    &_topCarousel,
+    &_bottomCarousel {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      //
+      width: 50%;
+    }
+
+    // &_card3d {
+    //   height: 150px;
+    // }
+  }
+
+  .animate {
+    top: 50%;
+  }
+
+  .topCarousel {
+    height: 100%;
+  }
+
+  .detailList {
+    max-width: 65%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    margin: 0 30px;
+  }
+  .dots_long {
+    display: none;
+  }
+  .info_left {
+    h4 {
+      font-size: 23px;
+    }
+  }
+
+  .info_right {
+    margin-left: 15px;
+    div {
+      a {
+        font-size: 17px;
+      }
+    }
+    p {
+      font-size: 17px;
+    }
+    img {
+      top: 1px;
+    }
+  }
+
+  .icons3d {
+    width: 80px;
+    height: 80px;
+    right: -75px;
+  }
+  .vis1 {
+    width: 130px;
+    height: 130px;
+    top: -18px;
+    left: 400px;
+  }
+
+  .works {
+    &_subtitle {
+      margin-bottom: 30px;
+    }
+    &_smallWrapper {
+      height: 165px;
+    }
+
+    &_imgOnly {
+      width: 100%;
+    }
+
+    &_card_case {
+      // top: 31px;
+      // right: 27px;
+      top: 9px;
+      right: 11px;
+      font-size: 14px;
+      padding: 5px 12px;
+    }
+  }
+
+  .form {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .info {
+    flex-direction: column;
+
+    &_left {
+      h4 {
+        margin-top: 0;
+      }
+    }
+
+    &_right {
+      margin-top: 25px;
+      div {
+        a {
+          font-size: 20px;
+        }
+
+        img {
+          left: 224px;
+        }
+      }
+    }
+  }
+
+  .card {
+    margin-right: 0;
+  }
+
+  .card_name {
+    line-height: 1.9rem;
+  }
+
+  .cards {
+    img {
+      display: none;
+    }
+  }
+
+  .vis1 {
+    width: 100px;
+    height: 100px;
+    top: -2px;
+    left: 308px;
+  }
+
+  .detailList {
+    max-width: 80%;
+  }
+
+  .works {
+    &_smallWrapper {
+      position: relative;
+      width: 100%;
+      // height: 350px;
+      height: auto;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+
+    &_carousel {
+      display: block;
+      margin-bottom: 50px;
+      //
+      // display: flex;
+      position: static;
+      width: 100%;
+      margin-bottom: 0;
+      // height: 50px;
+    }
+
+    &_topCarousel,
+    &_bottomCarousel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 0;
+
+      // margin: 10px auto;
+    }
+
+    &_card {
+      width: 90%;
+      margin: 20px 0px;
+      height: auto;
+      // position: relative;
+      // width: 30%;
+      // height: 330;
+      // border-radius: 25px;
+      // overflow: hidden;
+    }
+    &_card_case {
+      top: 31px;
+      right: 27px;
+    }
+  }
+
+  .works_topCarousel:nth-child(2),
+  .works_bottomCarousel:nth-child(2) {
+    display: none;
+  }
+
+  .animate,
+  .animateRight {
+    width: 100%;
+    animation: marquee 20s linear infinite;
+    top: 50%;
+    transform: translate(0, 0); /* тут поменял для анимации в другую сторону */
+  }
+
+  .cards {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .card {
+    display: block;
+    max-width: 100%;
+  }
+
+  .article {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  // .form {
+  //   width: 100%;
+  //   margin: 0 auto;
+  // }
+}
+
+@media screen and (max-width: 415px) {
+  .wrapper {
+    margin: 0 10px;
+
+    h1 {
+      line-height: 3rem;
+    }
+  }
+  .dots_wrapper {
+    display: none;
+  }
+
+  .works_subtitle {
+    margin-bottom: 25px;
+  }
+
+  .info_right {
+    margin: 30px 0 0 0;
+
+    div {
+      width: 100%;
+      a {
+        font-size: 23px;
+      }
+      img {
+        display: none;
+      }
+    }
+
+    p {
+      max-width: 100%;
+      font-size: 19px;
+    }
+  }
+
+  // картинки
+
+  .icons3d {
+    // width: 60px;
+    // height: 60px;
+    // top: 20px;
+    // right: -30px;
+    right: -76px;
+  }
+  .vis1 {
+    width: 80px;
+    height: 80px;
+    top: 19px;
+    left: 289px;
+  }
+
+  .cards {
+    margin-top: 10px;
+  }
+
+  .card {
+    max-width: 90%;
+
+    &_name {
+      font-size: 23px;
+    }
+  }
+
+  .detailList {
+    max-width: 90%;
+  }
+
+  .works_smallWrapper {
+    margin: 0 auto;
+  }
+
+  .animate,
+  .animateRight {
+    width: 108%;
+    transform: translate(-14px, 0); /* тут поменял для анимации в другую сторону */
+  }
+
+  .list_item {
+    span {
+      margin-right: 15px;
+    }
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  50% {
+    transform: translateX(65%);
+  }
+
+  100% {
+    transform: translateX(-15%);
+  }
+}

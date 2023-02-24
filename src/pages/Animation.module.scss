@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 1400px;
+  // max-width: 1400px;
   overflow: hidden;
 }
 
@@ -81,13 +81,66 @@
   }
 }
 
+// .info {
+//   display: flex;
+//   margin-top: 30px;
+//   justify-content: space-between;
+//   //   gap: 30px;
+
+//   &_left {
+//     //  max-width: 750px;
+
+//     & h4 {
+//       font-size: 30px;
+//       font-weight: 700;
+//       max-width: 750px;
+//     }
+//   }
+
+//   &_right {
+//     position: relative;
+//     margin: 0 100px;
+//     //  width: 310px;
+
+//     & div {
+//       display: flex;
+//       align-items: center;
+//       width: 108%;
+
+//       & a {
+//         font-size: 25px;
+//         font-weight: 700;
+//         color: #c8d9e9;
+//         border-bottom: 3px solid #c8d9e9;
+//         width: 100%;
+//       }
+//     }
+//     & p {
+//       font-size: 20px;
+//       max-width: 280px;
+//       margin-top: 8px;
+//       font-weight: 600;
+//     }
+//     img {
+//       margin-left: 7px;
+//       width: 20px;
+//       height: 20px;
+//       animation: leftRight 2s ease infinite;
+//       position: absolute;
+//       top: 7px;
+//       right: -30px;
+//     }
+//   }
+// }
+
 .info {
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
+  gap: 30px;
 
   &_left {
-    max-width: 750px;
+    // max-width: 750px;
 
     & h4 {
       font-size: 38px;
@@ -104,10 +157,12 @@
 
   &_right {
     margin-right: 100px;
+    min-width: 300px;
 
     & div {
       display: flex;
       align-items: center;
+      width: 104%;
 
       & a {
         font-size: 25px;
@@ -158,7 +213,7 @@
     font-size: 48px;
     line-height: 55px;
     width: 73%;
-    margin-bottom: 25px;
+    margin: 25px 0;
   }
   &_subtitle {
     font-size: 40px;
@@ -183,8 +238,8 @@
   //
   &_smallWrapper {
     position: relative;
-    width: 130%;
-    height: 319px;
+    width: 100%;
+    height: 354px;
     overflow: hidden;
   }
 
@@ -345,13 +400,18 @@
 }
 
 .detailList {
-  max-width: 45%;
+  // max-width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  margin-top: 41px;
 
   &_item {
     position: relative;
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 35px;
+    width: 600px;
 
     hr {
       margin: 15px 0 20px 0;
@@ -405,13 +465,32 @@
   animation-play-state: paused;
 }
 
+@media screen and (max-width: 1550px) {
+  .works_smallWrapper {
+    height: 211px;
+  }
+
+  // .works_card_case {
+  //   font-size: 11px;
+  //   top: 13px;
+  //   right: 23px;
+  // }
+}
+
 @media screen and (max-width: 1300px) {
   .works {
     &_subtitle {
       margin-bottom: 15px;
     }
-    &_smallWrapper {
-      height: 270px;
+    // &_smallWrapper {
+    //   height: 270px;
+    // }
+
+    &_card {
+      // width: 70%;
+    }
+
+    &_topCarousel {
     }
 
     h2 {
@@ -420,7 +499,7 @@
   }
 
   .info_right {
-    margin-right: 0;
+    margin-right: 30px;
   }
 
   .ph_emoji {
@@ -441,7 +520,8 @@
     margin-top: 40px;
   }
 
-  .works_card_case {
+  .works_card_case,
+  .works_card_case1 {
     font-size: 15px;
     top: 15px;
     right: 35px;
@@ -472,8 +552,15 @@
 @media screen and (max-width: 1130px) {
   .works {
     &_smallWrapper {
-      height: 249px;
+      height: 147px;
     }
+  }
+
+  .works_card_case,
+  .works_card_case1 {
+    top: 9px;
+    right: 20px;
+    font-size: 14px;
   }
 }
 
@@ -491,6 +578,11 @@
     }
   }
 
+  .works_card_case,
+  .works_card_case1 {
+    font-size: 9px;
+  }
+
   .works {
     &_image {
       left: auto;
@@ -506,11 +598,6 @@
   }
 
   .works {
-    &_smallWrapper {
-      height: 213px;
-    }
-
-    //
     &_topCarousel,
     &_bottomCarousel {
       margin-top: 20px;
@@ -522,7 +609,7 @@
   }
 
   .detailList {
-    max-width: 65%;
+    // max-width: 65%;
   }
 }
 
@@ -533,9 +620,14 @@
   .dots_long {
     display: none;
   }
+
+  .info {
+    flex-direction: column;
+  }
+
   .info_left {
     h4 {
-      font-size: 23px;
+      font-size: 32px;
     }
   }
 
@@ -583,7 +675,7 @@
       margin-bottom: 15px;
     }
     &_smallWrapper {
-      height: 165px;
+      height: 121px;
     }
 
     &_cardOnly,
@@ -595,13 +687,13 @@
       width: 100%;
     }
 
-    &_card_case {
+    &_card_case,
+    &_card_case1 {
       // top: 31px;
       // right: 27px;
-      top: 9px;
-      right: 11px;
-      font-size: 14px;
-      padding: 5px 12px;
+      // top: 15px;
+      // right: 21px;
+      // font-size: 21px;
     }
   }
 
@@ -611,24 +703,15 @@
 }
 
 @media screen and (max-width: 576px) {
-  .wrapper {
-    // margin: 0 20px;
-    // width: 100%;
-
-    // hr {
-    //   margin-right: 50px;
-    // }
-  }
-
   .title {
     font-size: 35px;
   }
 
   .info {
-    flex-direction: column;
-
     &_left {
       h4 {
+        font-size: 28px;
+
         margin-top: 0;
       }
 
@@ -638,7 +721,7 @@
     }
 
     &_right {
-      margin-top: 25px;
+      // margin-top: 25px;
       div {
         a {
           font-size: 20px;
@@ -652,19 +735,11 @@
   //   }
 
   .works {
-    &_image {
-      margin-left: 10%;
-      width: 70px;
-      height: 70px;
-      animation: updown 2s ease infinite;
-    }
-
     h2 {
       width: 100%;
       line-height: 37px;
     }
   }
-
   .works {
     &_smallWrapper {
       position: relative;
@@ -705,16 +780,6 @@
         width: 100%;
       }
 
-      //  &_card {
-      //    width: 90%;
-      //    margin: 20px 0px;
-      //    height: auto;
-      //    // position: relative;
-      //    // width: 30%;
-      //    // height: 330;
-      //    // border-radius: 25px;
-      //    // overflow: hidden;
-      //  }
       &_card_case {
         top: 15px;
         right: 42px;
@@ -733,35 +798,35 @@
       top: 50%;
       transform: translate(0, 0); /* тут поменял для анимации в другую сторону */
     }
-
-    //   .cards {
-    //     flex-wrap: nowrap;
-    //     flex-direction: column;
-    //   }
-
-    //   .card {
-    //     display: block;
-    //     max-width: 80%;
-    //   }
-
     .article {
       max-width: 90%;
       margin-top: 20px;
     }
-
-    // .form {
-    //   width: 100%;
-    //   margin: 0 auto;
-    // }
   }
 
   @media screen and (max-width: 415px) {
+    .info {
+      &_left {
+        h4 {
+          font-size: 28px;
+        }
+      }
+    }
     .wrapper {
       margin: 0 10px;
     }
 
+    .dots_wrapper {
+      display: none;
+    }
+
     .workSubtitle {
       font-size: 37px;
+    }
+
+    .info_right {
+      display: block;
+      margin: 0 auto;
     }
 
     // картинки

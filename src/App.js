@@ -29,6 +29,17 @@ import ItCom from './pages/ItCom';
 import Startup from './pages/Startup';
 import Nexign from './components/Nexign';
 import SmsChain from './pages/SmsChain';
+import Valkirye from './pages/Valkirye';
+import Murmansk from './pages/Murmansk';
+import Eclipse from './pages/Eclipse';
+import Integrity from './pages/Integrity';
+import Linq from './pages/Linq';
+import Itvideo from './pages/Itvideo';
+import Nhub from './pages/Nhub';
+import Dali from './pages/Dali';
+import Vinyl from './pages/Vinyl';
+import Package from './pages/Package';
+import Exhibition from './pages/Exhibition';
 
 export const THEME_STANDART = 'standart';
 export const THEME_REVERSED = 'reversed';
@@ -66,13 +77,26 @@ function App() {
               <Route path="/animation/startup" element={<Startup />} />
               <Route path="/animation/nexign" element={<Nexign />} />
               <Route path="/animation/smschain" element={<SmsChain />} />
+              <Route path="/animation/linq" element={<Linq />} />
+              <Route path="/animation/itvideo" element={<Itvideo />} />
+              <Route path="/animation/nhub" element={<Nhub />} />
+
               <Route path="/logos/rabbit" element={<Sturmgraf />} />
               <Route path="/logos/videomaker" element={<LogoVideoMaker />} />
+              <Route path="/logos/dali" element={<Dali />} />
+              <Route path="/logos/vinyl" element={<Vinyl />} />
+              <Route path="/logos/package" element={<Package />} />
+              <Route path="/logos/poster" element={<Exhibition />} />
+
               <Route path="/3dvisualization/interior" element={<Interior />} />
               <Route path="/3dvisualization/architecture" element={<Architecture />} />
               <Route path="/3dvisualization/exterior" element={<Exterior />} />
               <Route path="/3dvisualization/park" element={<Park />} />
               <Route path="/3dvisualization/artobject" element={<ArtObject />} />
+              <Route path="/webdevelopment/valkirye" element={<Valkirye />} />
+              <Route path="/webdevelopment/murmansk" element={<Murmansk />} />
+              <Route path="/webdevelopment/eclipse" element={<Eclipse />} />
+              <Route path="/webdevelopment/integrity" element={<Integrity />} />
             </Routes>
           </ScrollToTop>
         </div>

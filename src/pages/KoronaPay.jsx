@@ -25,7 +25,7 @@ import korona_ny2 from '../assets/korona_ny2.png';
 import korona_banner1 from '../assets/korona_banner1.png';
 import korona_banner2 from '../assets/korona_banner2.png';
 
-import koronaVideo from '../assets/KoronaVideo1.mp4';
+// import koronaVideo from '../assets/KoronaVideo1.mp4';
 
 const KoronaPay = () => {
   const { t } = useTranslation();
@@ -107,12 +107,26 @@ const KoronaPay = () => {
         <div className={styles.subheader}>{t('korona_anim')}</div>
         <div className={styles.videoWrapper}>
           <p>{t('korona_anim_text')}</p>
+          <div>
+            <iframe
+              className={styles.video}
+              src="https://player.vimeo.com/video/493357085?h=d3dc645eac&byline=0&portrait=0"
+              // width="640"
+              // height="300"
+              frameborder="0"
+              allow="autoplay fullscreen"
+              allowfullscreen
+              frameborder="0"
+              allow="autoplay fullscreen picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          {/* <script src="https://player.vimeo.com/api/player.js"></script> */}
 
-          <video width="320" height="240" controls autoPlay muted>
+          {/* <video width="320" height="240" controls autoPlay muted>
             <source src={koronaVideo} type="video/mp4" />
             <source src={koronaVideo} type="video/ogg" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       </section>
       <div className={styles.form}>

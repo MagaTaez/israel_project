@@ -46,15 +46,15 @@ const Animation = () => {
 
   const TopImages = [
     { url: korona, name: '/animation/koronapay' },
-    { url: purple, name: '#' },
+    { url: purple, name: '/animation/linq' },
     { url: girl, name: '/animation/smschain' },
-    { url: intis, name: '#' },
+    { url: intis, name: '/animation/itvideo' },
   ];
   const BottomImages = [
     { url: learn, name: '/animation/itcom' },
     { url: internet, name: '/animation/nexign' },
     { url: cats, name: '/animation/startup' },
-    { url: inhub, name: '#' },
+    { url: inhub, name: '/animation/nhub' },
   ];
   const notesArr = [];
 
@@ -137,43 +137,6 @@ const Animation = () => {
           ))}
         </div>
 
-        {/* <p>
-          We highlight several typical formats for using 2D and 3D animation, while they can be used in other
-          situations.
-        </p>
-        <div>
-          <img src="" alt="" />
-          <div>
-            <h5>Product Explainer</h5>
-            <p>A 1-1.5 minute video that tells about the principles of the product or service.</p>
-          </div>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <div>
-            <h5>Advertising pre-roll</h5>
-            <p>A bright short video with a call to action, which is used in advertising</p>
-            campaigns.
-          </div>
-        </div> */}
-        {/*  */}
-        {/* {OnlyImages.length > 0 ||
-          (TopImages.length > 0 && (
-            <div className={styles.works_miniWrapper}>
-              <h3 className={styles.works_subtitle}>{t('servPage_examples')}</h3>{' '}
-              <img className={styles.works_image} src={pointer} alt="pointer" />
-            </div>
-          ))} */}
-        {/* это статичные фотки */}
-        {/* {OnlyImages.length > 0 && (
-          <div className={styles.works_onlyCarousel}>
-            {OnlyImages?.map((item) => (
-              <div key={item} className={styles.works_cardOnly}>
-                <img className={styles.works_imgOnly} src={item} alt="card" />
-              </div>
-            ))}
-          </div>
-        )} */}
         <h3 className={styles.workSubtitle}>{t('servPage_examples')}</h3>
         {/* а это динамическая карусель */}
         {TopImages.length > 0 && BottomImages.length > 0 && (

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Contacts.module.scss';
+import logo from '../assets/Logo_white.png';
+
 const Contacts = () => {
   const { t } = useTranslation();
 
@@ -14,7 +16,11 @@ const Contacts = () => {
         <div className={styles.form__coop}>{t('form_cooperation')}</div>
         <div className={styles.form__email}>Jerusalem@mail.ru</div>
       </div>
-      <div className={styles.form__bottom}></div>
+      <div className={styles.form__bottom}>
+        <div>
+          <img src={logo} alt="logo" />
+        </div>
+      </div>
     </div>
   );
 };

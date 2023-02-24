@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactPlayer from 'react-player';
 
 import Form from '../components/Form';
 import Contacts from '../components/Contacts';
@@ -26,7 +27,7 @@ import startup_2 from '../assets/startup_2.png';
 import startup_3 from '../assets/startup_3.png';
 import startup_4 from '../assets/startup_4.png';
 import startup_5 from '../assets/startup_5.png';
-import Nexign_video from '../assets/Nexign_video.mp4';
+// import Nexign_video from '../assets/Nexign_video.mp4';
 
 const Nexign = () => {
   const { t } = useTranslation();
@@ -108,11 +109,23 @@ const Nexign = () => {
 
         <div className={styles.subheader}>{t('servPage_result')}</div>
         <div className={styles.videoWrapper}>
-          <video width="320" height="240" controls>
+          <ReactPlayer
+            url="https://vimeo.com/461371496"
+            width="100%"
+            height="100%"
+            controls
+            config={{
+              vimeo: {
+                playerOptions: { byline: true, controls: true },
+              },
+            }}
+            className={styles.video}
+          />
+          {/* <video width="320" height="240" controls>
             <source src={Nexign_video} type="video/mp4" />
             <source src={Nexign_video} type="video/ogg" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       </section>
       <div className={styles.form}>

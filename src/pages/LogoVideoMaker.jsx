@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import Form from '../components/Form';
+import Contacts from '../components/Contacts';
+
 import styles from './LogoVideoMaker.module.scss';
 
 import gravity from '../assets/gravity-dark.png';
@@ -16,8 +19,7 @@ import colorLogos from '../assets/colorLogos.png';
 import oneLogo from '../assets/OneLogo.png';
 import premiumBg from '../assets/premium_Bg.png';
 import gravityBg from '../assets/gravity_Bg.png';
-import Form from '../components/Form';
-import Contacts from '../components/Contacts';
+import videoMaker from '../assets/videoMaker.mp4';
 
 const LogoVideoMaker = () => {
   const { t } = useTranslation();
@@ -91,6 +93,16 @@ const LogoVideoMaker = () => {
           <img src={oneLogo} alt="oneLogo" />
           <p>{t('video_final')}</p>
         </div>
+
+        <div className={styles.videoWrapper}>
+          <p>{t('video_preview')}</p>
+          <video controls>
+            <source src={videoMaker} type="video/mp4" />
+            <source src={videoMaker} type="video/ogg" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
         <div className={styles.imageBg}>
           <img src={premiumBg} alt="premiumBg" />
           <img className={styles.imageBg_gravity} src={gravityBg} alt="gravityBg" />
@@ -101,21 +113,6 @@ const LogoVideoMaker = () => {
             <Contacts />
           </div>
         </div>
-        {/* <div className={styles.markup}>
-          <div className={styles.markup_one}>
-            <img src={blue} alt="blue" />
-          </div>
-          <div className={styles.markup_two}></div>
-          <div className={styles.markup_three}></div>
-          <div className={styles.markup_four}></div>
-        </div>
-        <div className={styles.logo_images}>
-          <img src={rabbits} alt="rabbits" />
-        </div>
-        <h3>Merch</h3>
-        <div className={styles.logo_images}>
-          <img src={shirts} alt="shirts" />
-        </div> */}
       </section>
     </div>
   );

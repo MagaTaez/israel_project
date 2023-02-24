@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactPlayer from 'react-player';
 
 import Form from '../components/Form';
 import Contacts from '../components/Contacts';
@@ -12,7 +13,7 @@ import itCom_2 from '../assets/itCom_2.png';
 import itCom_3 from '../assets/itCom_3.png';
 import itCom_4 from '../assets/itCom_4.png';
 import itCom_5 from '../assets/itCom_5.png';
-import intis_video from '../assets/Intis_video.mp4';
+// import intis_video from '../assets/Intis_video.mp4';
 
 const ItCom = () => {
   const { t } = useTranslation();
@@ -75,11 +76,33 @@ const ItCom = () => {
 
         <div className={styles.subheader}>{t('servPage_result')}</div>
         <div className={styles.videoWrapper}>
-          <video width="320" height="240" controls>
+          <ReactPlayer
+            url="https://vimeo.com/696922670"
+            width="100%"
+            height="100%"
+            // controls
+            config={{
+              vimeo: {
+                playerOptions: { byline: true, controls: true },
+              },
+            }}
+            className={styles.video}
+          />
+
+          {/* <iframe
+            className={styles.video}
+            src="https://player.vimeo.com/video/696922670?h=ce08b21ca1&color=ffffff&title=0&byline=0&portrait=0"
+            // style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen></iframe> */}
+          {/* <script src="https://player.vimeo.com/api/player.js"></script> */}
+
+          {/* <video width="320" height="240" controls>
             <source src={intis_video} type="video/mp4" />
             <source src={intis_video} type="video/ogg" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       </section>
       <div className={styles.form}>

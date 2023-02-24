@@ -21,8 +21,6 @@ import screen from '../assets/dev_screen.png';
 import vis1 from '../assets//3d_1.png';
 import vis2 from '../assets//3d_2.png';
 
-import pointer from '../assets/pointer.png';
-
 // import cans from '../assets/2_cans.png';
 // import cards from '../assets/Gravity-Card.png';
 // import design from '../assets/art_design.png';
@@ -210,22 +208,26 @@ const ServicePage = ({
           </>
         )}
 
-        {OnlyImages.length > 0 ||
-          (TopImages.length > 0 && (
-            <div className={styles.works_miniWrapper}>
-              <h3 className={styles.works_subtitle}>{t('servPage_examples')}</h3>{' '}
-              <img className={styles.works_image} src={pointer} alt="pointer" />
-            </div>
-          ))}
+        {TopImages.length > 0 && (
+          <div className={styles.works_miniWrapper}>
+            <h3 className={styles.works_subtitle}>{t('servPage_examples')}</h3>
+          </div>
+        )}
         {/* это статичные фотки */}
         {OnlyImages.length > 0 && (
-          <div className={styles.works_onlyCarousel}>
-            {OnlyImages?.map((item) => (
-              <div key={item} className={styles.works_cardOnly}>
-                <img className={styles.works_imgOnly} src={item} alt="card" />
-              </div>
-            ))}
-          </div>
+          <>
+            <div className={styles.works_miniWrapper}>
+              <h3 className={styles.works_subtitleStatic}>{t('servPage_examples')}</h3>
+            </div>
+            <div className={styles.works_onlyCarousel}>
+              {OnlyImages?.map((item) => (
+                <Link key={item.image} className={styles.works_cardOnly} to={item.link}>
+                  <img className={styles.works_imgOnly} src={item.image} alt="card" />
+                  <div className={styles.works_case}>Case</div>
+                </Link>
+              ))}
+            </div>
+          </>
         )}
         {/* а это динамическая карусель */}
         {TopImages.length > 0 && BottomImages.length > 0 && (

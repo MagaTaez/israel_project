@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactPlayer from 'react-player';
 
 import Form from '../components/Form';
 import Contacts from '../components/Contacts';
@@ -14,7 +15,7 @@ import sms_4 from '../assets/sms_4.png';
 import sms_5 from '../assets/sms_5.png';
 import sms_6 from '../assets/sms_6.png';
 import sms_7 from '../assets/sms_7.png';
-import Sms_video from '../assets/Sms_video.mp4';
+// import Sms_video from '../assets/Sms_video.mp4';
 
 const SmsChain = () => {
   const { t } = useTranslation();
@@ -57,11 +58,25 @@ const SmsChain = () => {
 
         <div className={styles.subheader}>{t('servPage_result')}</div>
         <div className={styles.videoWrapper}>
-          <video width="320" height="240" controls>
+          <ReactPlayer
+            url="https://vimeo.com/239242832"
+            width="100%"
+            height="100%"
+            // controls
+            // config={{ vimeo: { playerOptions: { background: true } } }}
+            config={{
+              vimeo: {
+                playerOptions: { byline: true, controls: true },
+              },
+            }}
+            className={styles.video}
+          />
+
+          {/* <video width="320" height="240" controls>
             <source src={Sms_video} type="video/mp4" />
             <source src={Sms_video} type="video/ogg" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       </section>
       <div className={styles.form}>

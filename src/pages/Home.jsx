@@ -29,7 +29,9 @@ const Home = () => {
           WEB
         </Link>
         <br />
-        <Link className={`${styles.title2} ${theme === 'reversed' ? styles.title2_reversed : ''}`} to="#">
+        <Link
+          className={`${styles.title2} ${theme === 'reversed' ? styles.title2_reversed : ''}`}
+          to="/3dvisualization">
           3D
         </Link>
         <br />

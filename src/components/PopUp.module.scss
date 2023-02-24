@@ -100,8 +100,10 @@
     font-weight: 600;
     text-align: var(--theme-default-popupTextAi); /* left / right */
 
-    & div {
+    & a {
       margin-top: 7px;
+      color: #000;
+      display: block;
     }
   }
 

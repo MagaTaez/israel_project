@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import ReactPlayer from 'react-player';
 
 import Form from '../components/Form';
 import Contacts from '../components/Contacts';
@@ -13,7 +14,7 @@ import startup_2 from '../assets/startup_2.png';
 import startup_3 from '../assets/startup_3.png';
 import startup_4 from '../assets/startup_4.png';
 import startup_5 from '../assets/startup_5.png';
-import BitSugar_video from '../assets/BitSugar_video.mp4';
+// import BitSugar_video from '../assets/BitSugar_video.mp4';
 
 const Startup = () => {
   const { t } = useTranslation();
@@ -58,11 +59,23 @@ const Startup = () => {
 
         <div className={styles.subheader}>{t('servPage_result')}</div>
         <div className={styles.videoWrapper}>
-          <video width="320" height="240" controls>
+          <ReactPlayer
+            url="https://vimeo.com/282304621"
+            width="100%"
+            height="100%"
+            // controls
+            config={{
+              vimeo: {
+                playerOptions: { byline: true, controls: true },
+              },
+            }}
+            className={styles.video}
+          />
+          {/* <video width="320" height="240" controls>
             <source src={BitSugar_video} type="video/mp4" />
             <source src={BitSugar_video} type="video/ogg" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       </section>
       <div className={styles.form}>
