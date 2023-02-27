@@ -21,12 +21,6 @@ import nexign_9 from '../assets/nexign_9.png';
 import nexign_10 from '../assets/nexign_10.png';
 import nexign_11 from '../assets/nexign_11.png';
 
-import startup_0 from '../assets/startup_0.png';
-import startup_1 from '../assets/startup_1.png';
-import startup_2 from '../assets/startup_2.png';
-import startup_3 from '../assets/startup_3.png';
-import startup_4 from '../assets/startup_4.png';
-import startup_5 from '../assets/startup_5.png';
 // import Nexign_video from '../assets/Nexign_video.mp4';
 
 const Nexign = () => {
@@ -130,9 +124,9 @@ const Nexign = () => {
       </section>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        {/* <div className={styles.contacts}> */}
+        <Contacts />
+        {/* </div> */}
       </div>
     </div>
   );

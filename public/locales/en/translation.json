@@ -6,7 +6,12 @@
   "form_number": "Number",
   "form_budget": "Budget",
   "form_budget_select": "Select budget",
-  "form_budget_big": "less than 600000?",
+  "form_budget_big": "less than $10,000",
+
+  "form_budget_big1": "from $10,000 to $20,000",
+  "form_budget_big2": "from $20,000 to $30,000",
+  "form_budget_big3": "from $30,000 to $100,000",
+
   "form_budget_small": "less than 400000?",
   "form_terms": "Terms",
   "form_terms_select": "Select terms",
@@ -134,11 +139,14 @@
   "vinyl_text1": "Develop three covers for a vinyl record in a given style.",
   "vinyl_text2": "The customer sent references-photos of what he liked and this is the result.",
 
-  "popup_develop": "Develop a website",
-  "popup_web": "Web design",
+  "popup_2dan": "2D Animation",
+  "popup_3dan": "3D Animation",
   "popup_3d": "3D visualization",
-  "popup_motion": "Motion design",
+  "popup_logos": "Logos",
+  "popup_corp": "Corporate identity",
   "popup_photo": "Photo retouching",
+  "popup_web": "Web development",
+
   "popup_agency": "Agency",
   "popup_career": "Career",
   "popup_reviews": "Reviews",
@@ -319,5 +327,15 @@
   "integrity_idea1": "The name of the company speaks of its openness, security and guarantees of honesty. The name is reinforced by the image of a chain, a stable and reliable symbol.",
   "integrity_idea2": "- Headset of the first and main level, very contrasting and draws attention well. Also this headset is used as a second level headset.",
   "integrity_idea3": "- A thin and strict typeface is used as filling for the top home line.",
-  "integrity_idea4": "The site design uses additional images of chains to create a solid image of an indestructible and protected barrier. As a corporate color, he chose blue, symbolizing sublimity, awareness, clarity and intelligence."
+  "integrity_idea4": "The site design uses additional images of chains to create a solid image of an indestructible and protected barrier. As a corporate color, he chose blue, symbolizing sublimity, awareness, clarity and intelligence.",
+
+  "form_start": "Project start",
+  "form_team": "Get on the team",
+  "form_coop": "Cooperation",
+  "form_label1": "What is the best thing you can do?",
+  "form_label2": "Upload a resume",
+  "form_label3": "Company",
+  "form_label4": "Phone",
+  "form_label5": "Offer",
+  "form_label6": "What do you have to offer?"
 }

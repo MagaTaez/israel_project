@@ -1,9 +1,7 @@
 .form {
   &__wrapper {
-    // display: flex;
-    // flex-direction: column;
     min-width: 205px;
-    flex: 0.5;
+    flex: 1;
     margin-left: 40px;
   }
 
@@ -29,8 +27,12 @@
   &__email,
   &__phone {
     color: #fff;
-    margin-top: 15px;
+    margin-top: 10px;
     font-style: 20px;
+  }
+
+  &__phone {
+    margin-top: 15px;
   }
 
   &__bottom {
@@ -55,6 +57,23 @@
   }
 }
 
+.contactImg {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+
+  img {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+  }
+
+  p {
+    margin-left: 10px;
+    color: #fff;
+  }
+}
+
 @media screen and (max-width: 1300px) {
   .form {
     &__wrapper {
@@ -64,13 +83,25 @@
     }
 
     &__element {
-      flex: 0.3;
+      flex: 0.4;
     }
 
     &__bottom {
-      flex: 0.3;
+      flex: 0.4;
       margin-left: 50px;
       margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .form {
+    &__element {
+      flex: 0.5;
+    }
+
+    &__bottom {
+      flex: 0.5;
     }
   }
 }

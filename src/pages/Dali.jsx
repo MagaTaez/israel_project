@@ -41,7 +41,7 @@ const Dali = () => {
             <p>{t('dali_pic2')}</p>
           </div>
         </div>
-        <h3>Result</h3>
+        <h3>{t('servPage_result')}</h3>
         <img className={styles.bigImage} src={res1} alt="res1" />
         <div className={styles.botWrapper}>
           <img className={styles.bigImage} src={res2} alt="res2" />
@@ -54,9 +54,7 @@ const Dali = () => {
       </section>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        <Contacts />
       </div>
     </div>
   );

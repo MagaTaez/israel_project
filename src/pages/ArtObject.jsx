@@ -53,9 +53,9 @@ const ArtObject = () => {
       <article className={styles.imgExamples_text}>{t('art_designText')}</article>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        {/* <div className={styles.contacts}> */}
+        <Contacts />
+        {/* </div> */}
       </div>
     </div>
   );

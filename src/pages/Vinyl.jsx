@@ -16,6 +16,7 @@ import headerImg from '../assets/vinyl_main.png';
 import vinyl1 from '../assets/vinyl_1.png';
 import vinyl2 from '../assets/vinyl_2.png';
 import vinyl3 from '../assets/vinyl_3.png';
+import big from '../assets/vinyl_big.png';
 import vinyl_min1 from '../assets/vinyl_mini1.png';
 import vinyl_min2 from '../assets/vinyl_mini2.png';
 import vinyl_min3 from '../assets/vinyl_mini3.png';
@@ -35,7 +36,7 @@ const Vinyl = () => {
         <h3>{t('sturm_subtitle')}</h3>
         <article>
           <p>{t('vinyl_text1')}</p>
-          <br /> <br />
+          <br />
           <p>{t('vinyl_text2')}</p>
         </article>
         {/* <div className={styles.topImgWrapper}>
@@ -49,23 +50,14 @@ const Vinyl = () => {
           </div>
         </div> */}
         <h3>{t('servPage_result')}</h3>
-        {/* <img className={styles.bigImage} src={res1} alt="res1" />
-        <div className={styles.botWrapper}>
-          <img className={styles.bigImage} src={res2} alt="res2" />
-          <img className={styles.bigImage} src={res3} alt="res3" />
-        </div> */}
 
         <div className={styles.botImage}>
-          <img className={styles.image_1} src={vinyl1} alt="image" />
-          <img className={styles.image_2} src={vinyl2} alt="image" />
-          <img className={styles.image_3} src={vinyl3} alt="image" />
+          <img src={big} alt="image" />
         </div>
       </section>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        <Contacts />
       </div>
     </div>
   );

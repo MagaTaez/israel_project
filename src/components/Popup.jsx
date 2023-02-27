@@ -36,20 +36,26 @@ const Popup = ({ setOpened, opened }) => {
             </div>
             <hr />
             <div className={styles.middle_left}>
-              <Link to="/webdevelopment" onClick={() => setOpened(false)}>
-                {t('popup_develop')}
+              <Link to="/animation" onClick={() => setOpened(false)}>
+                {t('popup_2dan')}
               </Link>
-              <Link to="" onClick={() => setOpened(false)}>
-                {t('popup_web')}
+              <Link to="/animation" onClick={() => setOpened(false)}>
+                {t('popup_3dan')}
               </Link>
               <Link to="/3dvisualization" onClick={() => setOpened(false)}>
                 {t('popup_3d')}
               </Link>
-              <Link to="/animation" onClick={() => setOpened(false)}>
-                {t('popup_motion')}
+              <Link to="/logos" onClick={() => setOpened(false)}>
+                {t('popup_logos')}
+              </Link>
+              <Link to="/logos" onClick={() => setOpened(false)}>
+                {t('popup_corp')}
               </Link>
               <Link to="/retouching" onClick={() => setOpened(false)}>
                 {t('popup_photo')}
+              </Link>
+              <Link to="/webdevelopment" onClick={() => setOpened(false)}>
+                {t('popup_web')}
               </Link>
             </div>
             {/* <div className={styles.middle_center}>

@@ -4,30 +4,42 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
 
+import FormTab1 from './FormTab1';
+import FormTab2 from './FormTab2';
+
 import styles from './Form.module.scss';
+import FormTab3 from './FormTab3';
 
 const Form = () => {
   const [formStatus, setFormStatus] = useState('');
+  const [activeTab, setActiveTab] = useState(0);
+  console.log(activeTab);
 
   const { t } = useTranslation();
 
+  const formNames = [
+    { name: t('form_start'), content: <FormTab1 /> },
+    { name: t('form_team'), content: <FormTab2 /> },
+    { name: t('form_coop'), content: <FormTab1 /> },
+  ];
+
   const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      number: '',
-      budget: '',
-      terms: '',
-      text: '',
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().min(3, 'Minimum 2 characters'),
-      email: Yup.string().email('Invalid email address'),
-      number: Yup.number(),
-      budget: Yup.string(),
-      terms: Yup.string(),
-      text: Yup.string().min(5, 'Minimum 5 characters'),
-    }),
+    // initialValues: {
+    //   name: '',
+    //   email: '',
+    //   number: '',
+    //   budget: '',
+    //   terms: '',
+    //   text: '',
+    // },
+    // validationSchema: Yup.object({
+    //   name: Yup.string().min(3, 'Minimum 2 characters'),
+    //   email: Yup.string().email('Invalid email address'),
+    //   number: Yup.number(),
+    //   budget: Yup.string(),
+    //   terms: Yup.string(),
+    //   text: Yup.string().min(5, 'Minimum 5 characters'),
+    // }),
 
     onSubmit: (values, actions) => {
       try {
@@ -63,109 +75,145 @@ const Form = () => {
   // },
 
   return (
-    <form className={styles.form} onSubmit={formik.handleSubmit}>
+    <div className={styles.form}>
       <h3 className={styles.title}>{t('form_name')}</h3>
 
-      <div className={styles.input__wrapper}>
-        <div className={styles.input__element}>
-          <input
-            className={styles.input}
-            name="name"
-            required
-            placeholder={t('form_name1')}
-            type="text"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.errors.name && formik.touched.name ? <div className={styles.error}>{formik.errors.name}</div> : null}
-        </div>
-        <div className={styles.input__element}>
-          <input
-            className={styles.input}
-            name="email"
-            required
-            placeholder={t('form_email')}
-            type="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.errors.email && formik.touched.email ? (
-            <div className={styles.error}>{formik.errors.email}</div>
-          ) : null}
-        </div>
-        <div className={styles.input__element}>
-          <input
-            className={styles.input}
-            name="number"
-            required
-            placeholder={t('form_number')}
-            type="number"
-            value={formik.values.number}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.errors.number && formik.touched.number ? (
-            <div className={styles.error}>{formik.errors.number}</div>
-          ) : null}
-        </div>
+      <div className={styles.formHeader}>
+        {formNames.map((item, i) => (
+          <button className={i === activeTab ? styles.btnActive : ''} onClick={() => setActiveTab(i)}>
+            {item.name}
+          </button>
+        ))}
       </div>
+      {activeTab === 0 && <FormTab1 />}
+      {activeTab === 1 && <FormTab2 />}
+      {activeTab === 2 && <FormTab3 />}
+      {/*  */}
+      {/* <div className={styles.formHeader}>
+        <button>Project start</button>
+        <button>Get on the team</button>
+        <button>Cooperation</button>
+      </div> */}
+      {/* <FormTab1 /> */}
+      {/* <FormTab2 /> */}
+    </div>
 
-      <div className={styles.select__wrapper}>
-        <div>
-          <label htmlFor="budget">{t('form_budget')}</label>
-          <select
-            name="budget"
-            id="budget"
-            value={formik.values.budget}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}>
-            <option value="" disabled="disabled">
-              {t('form_budget_select')}
-            </option>
-            <option value={t('form_budget_big')}>{t('form_budget_big')}</option>
-            <option value={t('form_budget_small')}>{t('form_budget_small')}</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="terms">{t('form_terms')}</label>
-          <select
-            name="terms"
-            id="terms"
-            value={formik.values.terms}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}>
-            <option value="" disabled="disabled">
-              {t('form_terms_select')}
-            </option>
-            <option value="Up to 14 days">{t('form_terms_big')}</option>
-            <option value="Up to 7 days">{t('form_terms_small')}</option>
-          </select>
-        </div>
-      </div>
-      <div className={styles.textarea__wrapper}>
-        <label htmlFor="text">{t('forms_comment')}</label>
-        <textarea
-          className={styles.textarea}
-          name="text"
-          id="text"
-          value={formik.values.text}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        {formik.errors.text && formik.touched.text ? (
-          <div className={styles.errorarea}>{formik.errors.text}</div>
-        ) : null}
-      </div>
-      <div className={styles.button_rapper}>
-        <button disabled={formik.isSubmitting} className={styles.button} type="submit">
-          {t('forms_button')}
-        </button>
-        {formStatus === 'success' && <div className={styles.success}>We contact with you soon!</div>}
-        {formStatus === 'failure' && <div className={styles.failure}>Something wrong, try again Please</div>}
-      </div>
-    </form>
+    // <form className={styles.form} onSubmit={formik.handleSubmit}>
+    //   <h3 className={styles.title}>{t('form_name')}</h3>
+
+    //   <div className={styles.formHeader}>
+    //     <p>Project start</p>
+    //     <p>Get on the team</p>
+    //     <p>Cooperation</p>
+    //   </div>
+
+    //   <div className={styles.input__wrapper}>
+    //     <div className={styles.input__element}>
+    //       <input
+    //         className={styles.input}
+    //         name="name"
+    //         required
+    //         placeholder={t('form_name1')}
+    //         type="text"
+    //         value={formik.values.name}
+    //         onChange={formik.handleChange}
+    //         onBlur={formik.handleBlur}
+    //       />
+    //       {formik.errors.name && formik.touched.name ? <div className={styles.error}>{formik.errors.name}</div> : null}
+    //     </div>
+    //     <div className={styles.input__element}>
+    //       <input
+    //         className={styles.input}
+    //         name="email"
+    //         required
+    //         placeholder={t('form_email')}
+    //         type="email"
+    //         value={formik.values.email}
+    //         onChange={formik.handleChange}
+    //         onBlur={formik.handleBlur}
+    //       />
+    //       {formik.errors.email && formik.touched.email ? (
+    //         <div className={styles.error}>{formik.errors.email}</div>
+    //       ) : null}
+    //     </div>
+    //     <div className={styles.input__element}>
+    //       <input
+    //         className={styles.input}
+    //         name="number"
+    //         required
+    //         placeholder={t('form_number')}
+    //         type="number"
+    //         value={formik.values.number}
+    //         onChange={formik.handleChange}
+    //         onBlur={formik.handleBlur}
+    //       />
+    //       {formik.errors.number && formik.touched.number ? (
+    //         <div className={styles.error}>{formik.errors.number}</div>
+    //       ) : null}
+    //     </div>
+    //   </div>
+
+    //   <div className={styles.select__wrapper}>
+    //     <div>
+    //       <label htmlFor="budget">{t('form_budget')}</label>
+    //       <select
+    //         name="budget"
+    //         id="budget"
+    //         value={formik.values.budget}
+    //         onChange={formik.handleChange}
+    //         onBlur={formik.handleBlur}>
+    //         <option value="" disabled="disabled">
+    //           {t('form_budget_select')}
+    //         </option>
+    //         <option value={t('form_budget_big')}>{t('form_budget_big')}</option>
+    //         <option value={t('form_budget_big1')}>{t('form_budget_big1')}</option>
+    //         <option value={t('form_budget_big2')}>{t('form_budget_big2')}</option>
+    //         <option value={t('form_budget_big3')}>{t('form_budget_big3')}</option>
+    //       </select>
+    //     </div>
+    //     <div>
+    //       <label htmlFor="terms">{t('form_terms')}</label>
+    //       <select
+    //         name="terms"
+    //         id="terms"
+    //         value={formik.values.terms}
+    //         onChange={formik.handleChange}
+    //         onBlur={formik.handleBlur}>
+    //         <option value="" disabled="disabled">
+    //           {t('form_terms_select')}
+    //         </option>
+    //         <option value={t('popup_2dan')}>{t('popup_2dan')}</option>
+    //         <option value={t('popup_3dan')}>{t('popup_3dan')}</option>
+    //         <option value={t('popup_3d')}>{t('popup_3d')}</option>
+    //         <option value={t('popup_logos')}>{t('popup_logos')}</option>
+    //         <option value={t('popup_corp')}>{t('popup_corp')}</option>
+    //         <option value={t('popup_photo')}>{t('popup_photo')}</option>
+    //         <option value={t('popup_web')}>{t('popup_web')}</option>
+    //       </select>
+    //     </div>
+    //   </div>
+    //   <div className={styles.textarea__wrapper}>
+    //     <label htmlFor="text">{t('forms_comment')}</label>
+    //     <textarea
+    //       className={styles.textarea}
+    //       name="text"
+    //       id="text"
+    //       value={formik.values.text}
+    //       onChange={formik.handleChange}
+    //       onBlur={formik.handleBlur}
+    //     />
+    //     {formik.errors.text && formik.touched.text ? (
+    //       <div className={styles.errorarea}>{formik.errors.text}</div>
+    //     ) : null}
+    //   </div>
+    //   <div className={styles.button_rapper}>
+    //     <button disabled={formik.isSubmitting} className={styles.button} type="submit">
+    //       {t('forms_button')}
+    //     </button>
+    //     {formStatus === 'success' && <div className={styles.success}>We contact with you soon!</div>}
+    //     {formStatus === 'failure' && <div className={styles.failure}>Something wrong, try again Please</div>}
+    //   </div>
+    // </form>
   );
 };
 

@@ -19,7 +19,7 @@ const Services = () => {
   const serviceArr = [
     { name: t('services_animation'), link: '/animation', img: animation },
     { name: t('services_viz'), link: '/3dvisualization', img: visual },
-    { name: t('services_graph'), link: '#', img: design },
+    // { name: t('services_graph'), link: '#', img: design },
     { name: t('services_logos'), link: '/logos', img: logos },
     { name: t('services_photo'), link: '/retouching', img: photos },
     { name: t('services_webDev'), link: '/webdevelopment', img: web },

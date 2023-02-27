@@ -50,9 +50,9 @@ const Park = () => {
       </section>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        {/* <div className={styles.contacts}> */}
+        <Contacts />
+        {/* </div> */}
       </div>
     </div>
   );

@@ -61,9 +61,7 @@ const Exhibition = () => {
       </section>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        <Contacts />
       </div>
     </div>
   );

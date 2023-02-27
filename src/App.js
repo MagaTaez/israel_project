@@ -40,6 +40,7 @@ import Dali from './pages/Dali';
 import Vinyl from './pages/Vinyl';
 import Package from './pages/Package';
 import Exhibition from './pages/Exhibition';
+import Icons from './components/Icons';
 
 export const THEME_STANDART = 'standart';
 export const THEME_REVERSED = 'reversed';
@@ -61,6 +62,7 @@ function App() {
         {/* {opened && <Popup setOpened={setOpened} opened={opened} />} */}
         <Popup setOpened={setOpened} opened={opened} />
         <Header setOpened={setOpened} opened={opened} />
+        <Icons />
         <div className={styles.wrapper}>
           <ScrollToTop>
             <Routes>
@@ -71,6 +73,7 @@ function App() {
               <Route path="/retouching" element={<Retouching />} />
               <Route path="/webdevelopment" element={<WebDevelopment />} />
               <Route path="/3dvisualization" element={<Visualisation3D />} />
+
               <Route path="/animation" element={<Animation />} />
               <Route path="/animation/koronapay" element={<KoronaPay />} />
               <Route path="/animation/itcom" element={<ItCom />} />

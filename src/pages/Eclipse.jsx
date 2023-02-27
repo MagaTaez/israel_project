@@ -59,7 +59,7 @@ const Eclipse = () => {
           <br /> <br />
           <img className={styles.imgText} src={ecl_text2} alt="text_example" />
         </article>
-        <h3>Style</h3>
+        <h3>{t('intis_style')}</h3>
         <article>
           {t('exlipse_style1')}
           <br /> <br />
@@ -98,9 +98,7 @@ const Eclipse = () => {
       </section>
       <div className={styles.form}>
         <Form />
-        <div className={styles.contacts}>
-          <Contacts />
-        </div>
+        <Contacts />
       </div>
     </div>
   );

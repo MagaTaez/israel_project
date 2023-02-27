@@ -12,7 +12,8 @@
 
 .link {
   margin: 20px 0;
-  width: 315px; /* добавил потом чтобы текст не вылезал */
+  // width: 315px; /* добавил потом чтобы текст не вылезал */
+  width: 18%;
 }
 
 .link:hover {
@@ -26,8 +27,9 @@
   display: block;
   position: relative;
   margin-bottom: 15px;
-  width: 315px;
-  height: 200px;
+  width: 100%;
+  // width: 315px;
+  // height: 200px;
   border-radius: 30px;
   overflow: hidden;
 
@@ -64,14 +66,34 @@
 }
 
 @media screen and (max-width: 1480px) {
-  .card_section {
-    justify-content: space-around;
+  .link {
+    width: 23%;
   }
 }
 
 @media screen and (max-width: 1300px) {
+  .link {
+    width: 31%;
+  }
+
   .form {
     display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card_section {
+    width: 85%;
+    justify-content: space-between;
+  }
+  .link {
+    width: 315px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .card_section {
+    width: 100%;
   }
 }
 
@@ -107,6 +129,7 @@
   .form {
     display: block;
     margin-top: 20px;
+    width: 100%;
   }
 }
 

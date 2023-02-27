@@ -141,9 +141,12 @@
 
 .form {
   display: flex;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
+  // position: absolute;
+  // bottom: 50px;
+  // left: 50px;
+  margin-top: -300px;
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (max-width: 1300px) {
@@ -153,7 +156,7 @@
 
   .form {
     display: block;
-    top: 350px;
+    // top: 350px;
   }
 
   .contacts {
@@ -229,11 +232,11 @@
     margin-top: 20px;
   }
 
-  .description {
-    h3:nth-child(1) {
-      margin-top: 75px;
-    }
-  }
+  // .description {
+  //   h3:nth-child(1) {
+  //     margin-top: 75px;
+  //   }
+  // }
 
   .markup {
     &_one {
@@ -253,8 +256,7 @@
   }
 
   .form {
-    top: 400px;
-    top: 278px;
+    margin-top: -150px;
   }
 
   .wrapper {
