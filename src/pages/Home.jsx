@@ -35,7 +35,7 @@ const Home = () => {
           3D
         </Link>
         <br />
-        <Link className={`${styles.title3} ${theme === 'reversed' ? styles.title3_reversed : ''}`} to="#">
+        <Link className={`${styles.title3} ${theme === 'reversed' ? styles.title3_reversed : ''}`} to="/logos">
           DESIGN
         </Link>
         {/* <h3 className={styles.title33} to="#">
