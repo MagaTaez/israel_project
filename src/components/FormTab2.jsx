@@ -115,7 +115,7 @@ const FormTab2 = () => {
           ) : null}
         </div>
         <div className={styles.textarea__wrapper}>
-          <label htmlFor="text">What is the best thing you can do?</label>
+          <label htmlFor="text">{t('form_label1')}</label>
           <textarea
             className={styles.textarea}
             name="text"
@@ -146,7 +146,7 @@ const FormTab2 = () => {
       <div className={styles.uploader}>
         {/* <button type="button">Загрузить фотографию</button> */}
         {/* <div>Файл не выбран</div> */}
-        <label htmlFor="upload">Upload a resume</label>
+        <label htmlFor="upload">{t('form_label2')}</label>
         <input
           type="file"
           name="upload"

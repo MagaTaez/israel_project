@@ -31,8 +31,13 @@ import pen2 from '../assets/pen_eye_2.png';
 import ph_emoji from '../assets/photo_emoji.png';
 import ph_flash from '../assets/photo_flash.png';
 
+import insta from '../assets/instagram-svgrepo-com.svg';
+import whatsapp from '../assets/whatsapp-svgrepo-com.svg';
+import telegram from '../assets/telegram-plane-svgrepo-com.svg';
+
 import Form from '../components/Form';
 import Contacts from '../components/Contacts';
+import { Link } from 'react-router-dom';
 
 const Retouching = () => {
   const { t } = useTranslation();
@@ -120,11 +125,15 @@ const Retouching = () => {
       <div className={styles.service}>
         <span>{t('servPage_service')}</span>
         <div className={styles.dots_wrapper}>
-          <div className={styles.dots_long}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
+          <Link to="#">
+            <img src={whatsapp} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={insta} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={telegram} alt="whatsapp" />
+          </Link>
         </div>
       </div>
       <hr />
@@ -192,7 +201,7 @@ const Retouching = () => {
         <div className={styles.works_onlyCarousel}>
           <img className={styles.onlyImage} src={house} alt="image" />
         </div>
-        <div className={styles.works_onlyCarousel}>
+        <div className={styles.works_onlyCarouselParfume}>
           <img src={parf1} alt="image" />
           <img src={parf2} alt="image" />
         </div>

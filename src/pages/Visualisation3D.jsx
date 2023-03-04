@@ -1,6 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
+
+import Form from '../components/Form';
+import Contacts from '../components/Contacts';
 
 import styles from './Visualisation3D.module.scss';
 
@@ -16,10 +20,11 @@ import vis4 from '../assets//3d_4.png';
 import vis5 from '../assets//3d_5.png';
 import tree from '../assets/3d_2.png';
 
+import insta from '../assets/instagram-svgrepo-com.svg';
+import whatsapp from '../assets/whatsapp-svgrepo-com.svg';
+import telegram from '../assets/telegram-plane-svgrepo-com.svg';
+
 import arrow from '../assets/Arrow.png';
-import { Link } from 'react-router-dom';
-import Form from '../components/Form';
-import Contacts from '../components/Contacts';
 
 // const Visualisation3D = () => {
 //   const { t } = useTranslation();
@@ -129,11 +134,15 @@ const Visualisation3D = () => {
       <div className={styles.service}>
         <span>{t('servPage_service')}</span>
         <div className={styles.dots_wrapper}>
-          <div className={styles.dots_long}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
+          <Link to="#">
+            <img src={whatsapp} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={insta} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={telegram} alt="whatsapp" />
+          </Link>
         </div>
       </div>
       <hr />
@@ -203,7 +212,7 @@ const Visualisation3D = () => {
 
             <div className={styles.works_topCarousel}>
               {TopImages?.map((item) => (
-                <Link key={item} className={styles.works_card} to={`${item.name}`}>
+                <Link key={item} className={styles.works_cardTop} to={`${item.name}`}>
                   <img className={styles.works_card_img} src={item.url} alt="card" />
                   <p className={styles.works_card_case}>Case</p>
                 </Link>
@@ -211,7 +220,7 @@ const Visualisation3D = () => {
             </div>
             <div className={styles.works_topCarousel}>
               {TopImages?.map((item) => (
-                <Link key={item} className={styles.works_card} to={`${item.name}`}>
+                <Link key={item} className={styles.works_cardTop} to={`${item.name}`}>
                   <img className={styles.works_card_img} src={item.url} alt="card" />
                   <p className={styles.works_card_case}>Case</p>
                 </Link>

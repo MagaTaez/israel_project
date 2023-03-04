@@ -52,6 +52,8 @@
   & span {
     display: flex;
     align-items: center;
+    font-size: 20px;
+    font-weight: 600;
     padding: 5px 15px;
     border: 2px solid black;
     background-repeat: 20px;
@@ -63,21 +65,22 @@
   &_wrapper {
     display: flex;
     align-items: center;
-  }
-  &_long {
-    margin-right: 20px;
-    width: 150px;
-    height: 40px;
-    background-color: black;
-    border-radius: 20px;
-  }
+    gap: 30px;
 
-  &_short {
-    margin-right: 20px;
-    width: 30px;
-    height: 30px;
-    background-color: black;
-    border-radius: 50%;
+    a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 80%;
+        height: 80%;
+      }
+    }
   }
 }
 
@@ -230,7 +233,9 @@
   position: relative;
   margin-top: 15px;
   // max-width: 340px;
-  max-width: 45%;
+
+  max-width: 40%;
+
   margin-right: 30px;
 
   &_name {
@@ -280,6 +285,28 @@
     flex-wrap: wrap;
     margin-bottom: 50px;
     justify-content: center;
+  }
+
+  &_onlyCarouselParfume {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &_onlyCarouselParfume {
+    img:nth-child(1) {
+      width: 41%;
+      object-fit: cover;
+      border-radius: 32px;
+    }
+
+    img:nth-child(2) {
+      width: 52%;
+      object-fit: cover;
+      border-radius: 32px;
+    }
   }
 
   &_cardOnly {
@@ -486,6 +513,27 @@
 .animate:hover,
 .animateRight:hover {
   animation-play-state: paused;
+}
+
+@media screen and (max-width: 1000px) {
+  .service {
+    & span {
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+    }
+  }
+
+  .dots_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    a {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -993,6 +1041,20 @@
     margin-top: 20px;
   }
 
+  .works_onlyCarouselParfume {
+    img:nth-child(1) {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+    }
+
+    img:nth-child(2) {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+    }
+  }
+
   // .form {
   //   width: 100%;
   //   margin: 0 auto;
@@ -1013,7 +1075,7 @@
   }
 
   .dots_wrapper {
-    display: none;
+    gap: 15px;
   }
 
   // картинки

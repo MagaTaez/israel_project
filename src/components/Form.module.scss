@@ -29,15 +29,16 @@
   height: 65px;
   gap: 26px;
   padding-bottom: 5px;
+  transition: all 0.3s;
 
   button {
     min-width: 226px;
-    color: rgba(255, 255, 255, 0.863);
+    color: rgba(255, 255, 255, 0.727);
     background-color: transparent;
     border: none;
     font-size: 25px;
     // font-weight: 600;
-    transition: all 0.2s;
+    transition: all 0.4s;
 
     &:hover {
       cursor: pointer;
@@ -48,13 +49,15 @@
   .btnActive {
     position: relative;
     font-weight: 600;
-    color: #fff;
+    color: rgb(255, 255, 255);
+    transition: all 0.2s;
+    scale: 1.1;
     &::before {
       content: '';
       position: absolute;
       width: 8px;
       height: 8px;
-      background-color: rgb(218, 32, 32);
+      background-color: #c8d9e9;
       border-radius: 50%;
       display: block;
       top: 49px;

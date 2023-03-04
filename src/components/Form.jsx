@@ -13,7 +13,6 @@ import FormTab3 from './FormTab3';
 const Form = () => {
   const [formStatus, setFormStatus] = useState('');
   const [activeTab, setActiveTab] = useState(0);
-  console.log(activeTab);
 
   const { t } = useTranslation();
 

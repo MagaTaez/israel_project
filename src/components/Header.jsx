@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import { ThemeContext } from '../App';
 
+import { useResize } from '../services/resizeHook';
+
 import LanguageFlags from './LanguageFlags';
 
 import styles from './Header.module.scss';
@@ -18,9 +20,13 @@ const Header = ({ setOpened, opened }) => {
   const secondRef = useRef(null);
   const thirdRef = useRef(null);
 
+  const [currentRef, setCurrentRef] = useState(firstRef);
+
   const { theme } = useContext(ThemeContext);
 
   const { t } = useTranslation();
+
+  const sizeHook = useResize();
 
   // тут мы делаем анимацию для активного элемента в навигации
   // useEffect(() => {
@@ -29,11 +35,18 @@ const Header = ({ setOpened, opened }) => {
   // }, []);
 
   const navActive = (reference) => {
+    setCurrentRef(reference);
     ref.current.style.left = reference.current ? reference.current.offsetLeft + 'px' : 0;
     ref.current.style.width = reference.current ? reference.current.offsetWidth + 'px' : 0;
-    // console.log(ref.current.style.left);
-    // marginLeftRef();
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navActive(currentRef);
+    }, 250);
+    navActive(currentRef);
+    return () => clearTimeout(timer);
+  }, [sizeHook]);
 
   // const marginLeftRef = useCallback(
   //   (node) => {

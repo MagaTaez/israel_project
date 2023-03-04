@@ -21,6 +21,10 @@ import screen from '../assets/dev_screen.png';
 import vis1 from '../assets//3d_1.png';
 import vis2 from '../assets//3d_2.png';
 
+import insta from '../assets/instagram-svgrepo-com.svg';
+import whatsapp from '../assets/whatsapp-svgrepo-com.svg';
+import telegram from '../assets/telegram-plane-svgrepo-com.svg';
+
 // import cans from '../assets/2_cans.png';
 // import cards from '../assets/Gravity-Card.png';
 // import design from '../assets/art_design.png';
@@ -126,11 +130,15 @@ const ServicePage = ({
       <div className={styles.service}>
         <span>{t('servPage_service')}</span>
         <div className={styles.dots_wrapper}>
-          <div className={styles.dots_long}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
+          <Link to="#">
+            <img src={whatsapp} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={insta} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={telegram} alt="whatsapp" />
+          </Link>
         </div>
       </div>
       <hr />

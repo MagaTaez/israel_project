@@ -23,6 +23,10 @@ import anim_2 from '../assets/animate_2.png';
 import anim_3 from '../assets/animate_3.png';
 import anim_4 from '../assets/animate_4.png';
 
+import insta from '../assets/instagram-svgrepo-com.svg';
+import whatsapp from '../assets/whatsapp-svgrepo-com.svg';
+import telegram from '../assets/telegram-plane-svgrepo-com.svg';
+
 const Animation = () => {
   const { t } = useTranslation();
 
@@ -83,11 +87,20 @@ const Animation = () => {
       <div className={styles.service}>
         <span>{t('servPage_service')}</span>
         <div className={styles.dots_wrapper}>
-          <div className={styles.dots_long}></div>
+          <Link to="#">
+            <img src={whatsapp} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={insta} alt="whatsapp" />
+          </Link>
+          <Link to="#">
+            <img src={telegram} alt="whatsapp" />
+          </Link>
+          {/* <div className={styles.dots_long}></div>
           <div className={styles.dots_short}></div>
           <div className={styles.dots_short}></div>
           <div className={styles.dots_short}></div>
-          <div className={styles.dots_short}></div>
+          <div className={styles.dots_short}></div> */}
         </div>
       </div>
       <hr />
