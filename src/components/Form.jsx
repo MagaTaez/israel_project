@@ -39,28 +39,25 @@ const Form = () => {
     //   terms: Yup.string(),
     //   text: Yup.string().min(5, 'Minimum 5 characters'),
     // }),
-
-    onSubmit: (values, actions) => {
-      try {
-        emailjs.send('service_lrjl91k', 'template_2td209s', values, 'ZQ1RHMPm_vSnxaIJP').then(() => {
-          console.log('email sent', values);
-          actions.setSubmitting(false);
-          setFormStatus('success');
-
-          setTimeout(() => {
-            actions.resetForm();
-            setFormStatus('');
-          }, 4000);
-        });
-      } catch (error) {
-        console.log(error);
-        setFormStatus('failure');
-        setTimeout(() => {
-          setFormStatus('');
-        }, 4000);
-      }
-    },
-
+    // onSubmit: (values, actions) => {
+    //   try {
+    //     emailjs.send('service_lrjl91k', 'template_2td209s', values, 'ZQ1RHMPm_vSnxaIJP').then(() => {
+    //       console.log('email sent', values);
+    //       actions.setSubmitting(false);
+    //       setFormStatus('success');
+    //       setTimeout(() => {
+    //         actions.resetForm();
+    //         setFormStatus('');
+    //       }, 4000);
+    //     });
+    //   } catch (error) {
+    //     console.log(error);
+    //     setFormStatus('failure');
+    //     setTimeout(() => {
+    //       setFormStatus('');
+    //     }, 4000);
+    //   }
+    // },
     // onSubmit: (values) => console.log(values),
   });
 

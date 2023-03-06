@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import emailjs from '@emailjs/browser';
 
 import styles from './FormTab2.module.scss';
 
@@ -30,28 +31,30 @@ const FormTab2 = () => {
       // upload: Yup
     }),
 
-    // onSubmit: (values) => console.log(values),
+    onSubmit: (values, actions) => {
+      try {
+        emailjs.send('service_lrjl91k', 'template_2td209s', values, 'ZQ1RHMPm_vSnxaIJP').then(() => {
+          console.log('email sent', values);
+          actions.setSubmitting(false);
+          setFormStatus('success');
+
+          setTimeout(() => {
+            actions.resetForm();
+            setFormStatus('');
+          }, 4000);
+        });
+      } catch (error) {
+        console.log(error);
+        setFormStatus('failure');
+        setTimeout(() => {
+          setFormStatus('');
+        }, 4000);
+      }
+    },
   });
 
-  // onSubmit: (values) => console.log(JSON.stringify(values, null, 2)),
-  // onSubmit:     "https://formsubmit.co/your@email.com" method="POST",
-
-  // onSubmit: (values) => {
-  //   console.log('submit', values);
-  //   alert('Thank you for the submission. Korionna will be in contact with you shortly');
-  //   resetForm();
-  // },
-
   return (
-    <form /* className={styles.form} */ onSubmit={formik.handleSubmit}>
-      {/* <h3 className={styles.title}>{t('form_name')}</h3>
-
-      <div className={styles.formHeader}>
-        <p>Project start</p>
-        <p>Get on the team</p>
-        <p>Cooperation</p>
-      </div> */}
-
+    <form onSubmit={formik.handleSubmit}>
       <div className={styles.input__wrapper}>
         <div className={styles.input__element}>
           <input
@@ -129,20 +132,7 @@ const FormTab2 = () => {
           ) : null}
         </div>
       </div>
-      {/* <div className={styles.textarea__wrapper}>
-        <label htmlFor="text">{t('forms_comment')}</label>
-        <textarea
-          className={styles.textarea}
-          name="text"
-          id="text"
-          value={formik.values.text}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        {formik.errors.text && formik.touched.text ? (
-          <div className={styles.errorarea}>{formik.errors.text}</div>
-        ) : null}
-      </div> */}
+
       <div className={styles.uploader}>
         {/* <button type="button">Загрузить фотографию</button> */}
         {/* <div>Файл не выбран</div> */}

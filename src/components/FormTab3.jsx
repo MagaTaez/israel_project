@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import emailjs from '@emailjs/browser';
 
 import styles from './FormTab3.module.scss';
 
@@ -32,7 +33,26 @@ const FormTab3 = () => {
       // upload: Yup
     }),
 
-    // onSubmit: (values) => console.log(values),
+    onSubmit: (values, actions) => {
+      try {
+        emailjs.send('service_lrjl91k', 'template_2td209s', values, 'ZQ1RHMPm_vSnxaIJP').then(() => {
+          console.log('email sent', values);
+          actions.setSubmitting(false);
+          setFormStatus('success');
+
+          setTimeout(() => {
+            actions.resetForm();
+            setFormStatus('');
+          }, 4000);
+        });
+      } catch (error) {
+        console.log(error);
+        setFormStatus('failure');
+        setTimeout(() => {
+          setFormStatus('');
+        }, 4000);
+      }
+    },
   });
 
   return (

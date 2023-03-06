@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
+import emailjs from '@emailjs/browser';
 import * as Yup from 'yup';
 
 import styles from './Form.module.scss';
@@ -28,7 +29,33 @@ const FormTab1 = () => {
       text: Yup.string().min(5, 'Minimum 5 characters'),
     }),
 
+    onSubmit: (values, actions) => {
+      try {
+        emailjs.send('service_lrjl91k', 'template_2td209s', values, 'ZQ1RHMPm_vSnxaIJP').then(() => {
+          console.log('email sent', values);
+          actions.setSubmitting(false);
+          setFormStatus('success');
+
+          setTimeout(() => {
+            actions.resetForm();
+            setFormStatus('');
+          }, 4000);
+        });
+      } catch (error) {
+        console.log(error);
+        setFormStatus('failure');
+        setTimeout(() => {
+          setFormStatus('');
+        }, 4000);
+      }
+    },
+
     // onSubmit: (values) => console.log(values),
+    // onSubmit: (values) => {
+    //   console.log('submit', values);
+    //   alert('Thank you for the submission. Korionna will be in contact with you shortly');
+    //   resetForm();
+    // },
   });
 
   // onSubmit: (values) => console.log(JSON.stringify(values, null, 2)),
