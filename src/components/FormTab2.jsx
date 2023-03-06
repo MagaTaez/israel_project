@@ -141,7 +141,8 @@ const FormTab2 = () => {
           type="file"
           name="upload"
           id="upload"
-          onChange={(e) => formik.setFieldValue('image', e.target.files[0])}
+          // onChange={(e) => formik.setFieldValue('upload', e.target.files[0])}
+          onChange={(e) => formik.setFieldValue('upload', e.currentTarget.files[0])}
           accept="image/*"
           placeholder="choose a file"
           //  value={formik.values.text}
